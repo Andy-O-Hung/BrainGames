@@ -7,40 +7,47 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.GridLayout;
 
-import java.time.Clock;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button button4x4;
-    private Button testButton;
+    private static Button button4x4;
+    private static Button mathButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        onClickMathButtonListener();
+        onClick4x4ButtonListener();
 
+
+    }
+
+
+    public void onClick4x4ButtonListener(){
         button4x4 = (Button)findViewById(R.id.button_4x4_game);
-        testButton = (Button)findViewById(R.id.Main_Test_Button);
         button4x4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, Game4x4Activity.class);
-                startActivity(intent);
-
-
+                Intent memory4x4Activity = new Intent(MainActivity.this, Game4x4Activity.class);
+                startActivity(memory4x4Activity);
 
             }
-        });
-        testButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, TestActivity.class);
-                startActivity(intent);
-
-
-
-            }
-        });
-
+        }
+        );
     }
+
+    public void onClickMathButtonListener(){
+        mathButton = (Button)findViewById(R.id.mathButton);
+        mathButton.setOnClickListener(
+                new View.OnClickListener(){
+                    @Override
+                    public void onClick(View v){
+                        Intent mathActivity = new Intent(MainActivity.this, MathActivity.class);
+                        startActivity(mathActivity);
+                    }
+                }
+        );
+    }
+
 }

@@ -2,19 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-      <module fileurl="file://$PROJECT_DIR$/BrainGames.iml" filepath="$PROJECT_DIR$/BrainGames.iml" />
-=======
-      <module fileurl="file://$PROJECT_DIR$/MemoryGame.iml" filepath="$PROJECT_DIR$/MemoryGame.iml" />
->>>>>>> 0655e4bf5ff290641327fa811d1ad548416a966a
-=======
-      <module fileurl="file://$PROJECT_DIR$/MemoryGame.iml" filepath="$PROJECT_DIR$/MemoryGame.iml" />
->>>>>>> 0655e4bf5ff290641327fa811d1ad548416a966a
-=======
-      <module fileurl="file://$PROJECT_DIR$/MemoryGame.iml" filepath="$PROJECT_DIR$/MemoryGame.iml" />
->>>>>>> 0655e4bf5ff290641327fa811d1ad548416a966a
+      <module fileurl="file://$PROJECT_DIR$/BrainGames-MathTesting.iml" filepath="$PROJECT_DIR$/BrainGames-MathTesting.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
