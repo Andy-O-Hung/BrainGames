@@ -4,7 +4,11 @@
     <modules>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/BrainGames.iml" filepath="$PROJECT_DIR$/BrainGames.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/MemoryGame.iml" filepath="$PROJECT_DIR$/MemoryGame.iml" />
+>>>>>>> 0655e4bf5ff290641327fa811d1ad548416a966a
 =======
       <module fileurl="file://$PROJECT_DIR$/MemoryGame.iml" filepath="$PROJECT_DIR$/MemoryGame.iml" />
 >>>>>>> 0655e4bf5ff290641327fa811d1ad548416a966a
