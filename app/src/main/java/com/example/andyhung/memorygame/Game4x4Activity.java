@@ -1,5 +1,6 @@
 package com.example.andyhung.memorygame;
 
+import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -23,7 +24,7 @@ public class Game4x4Activity extends AppCompatActivity implements View.OnClickLi
 
     private boolean isBusy = false;
 
-    //Handler setDelay;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +33,7 @@ public class Game4x4Activity extends AppCompatActivity implements View.OnClickLi
 
 
         GridLayout gridLayout = (GridLayout)findViewById(R.id.grid_layout_4x4);
+
 
         int numColumns = gridLayout.getColumnCount();
         int numRows = gridLayout.getRowCount();
