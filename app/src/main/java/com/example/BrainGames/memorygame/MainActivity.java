@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         button4x4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent memory4x4Activity = new Intent(MainActivity.this, Game4x4Activity.class);
+                Intent memory4x4Activity = new Intent(MainActivity.this, ColorMemoryGame.class);
                 startActivity(memory4x4Activity);
 
             }

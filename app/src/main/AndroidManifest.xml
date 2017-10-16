@@ -16,7 +16,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.BrainGames.memorygame.Game4x4Activity" />
+        <activity android:name="com.example.BrainGames.memorygame.ColorMemoryGame" />
         <activity android:name="com.example.BrainGames.memorygame.TestActivity" />
         <activity android:name="com.example.BrainGames.memorygame.MathAdditionActivity" />
         <activity android:name="com.example.BrainGames.memorygame.MathActivity"></activity>

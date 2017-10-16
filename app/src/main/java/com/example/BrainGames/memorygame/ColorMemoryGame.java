@@ -12,7 +12,7 @@ import java.util.Random;
  * The activity of our 4x4 memory game with colors.
  * To win, find all pairs.
  */
-public class Game4x4Activity extends AppCompatActivity implements View.OnClickListener{
+public class ColorMemoryGame extends AppCompatActivity implements View.OnClickListener{
 
     /** Initialize the number of elements */
     private int numberOfElements;
@@ -38,7 +38,7 @@ public class Game4x4Activity extends AppCompatActivity implements View.OnClickLi
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_game4x4);
+        setContentView(R.layout.activity_game4x4color);
 
         //Create our layout of the 4x4 game.
         GridLayout gridLayout = (GridLayout) findViewById(R.id.grid_layout_4x4);
@@ -132,7 +132,7 @@ public class Game4x4Activity extends AppCompatActivity implements View.OnClickLi
 
     /**
      * Our action listener whenever a button is clicked.
-     * @param view
+     * @param view the contents of the activity
      */
     @Override
     public void onClick(View view) {
@@ -164,8 +164,6 @@ public class Game4x4Activity extends AppCompatActivity implements View.OnClickLi
 
             selectedButton1 = null;
 
-
-            return;
         }
 
 
@@ -174,7 +172,7 @@ public class Game4x4Activity extends AppCompatActivity implements View.OnClickLi
             selectedButton2.flip();
             isBusy = true;
 
-            //Creates a delay so the user knows what the second betton was.
+            //Creates a delay so the user knows what the second button was.
             final android.os.Handler handler = new android.os.Handler();
 
             handler.postDelayed(new Runnable() {

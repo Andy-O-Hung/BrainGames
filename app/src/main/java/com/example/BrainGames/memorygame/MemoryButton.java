@@ -13,6 +13,7 @@ import android.widget.GridLayout;
  * Class for our custom memory button. Extends to widget which we get our
  * attributes from.
  */
+
 public class MemoryButton extends android.support.v7.widget.AppCompatButton {
     /** Initialize row */
     private int row;
