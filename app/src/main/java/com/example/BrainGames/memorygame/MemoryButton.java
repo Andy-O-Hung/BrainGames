@@ -74,7 +74,7 @@ public class MemoryButton extends android.support.v7.widget.AppCompatButton {
 
     /**
      * Deterimine if this button is matched.
-     * @return
+     * @return if it is matched, true or false.
      */
     public boolean isMatched() {
         return isMatched;
@@ -88,10 +88,20 @@ public class MemoryButton extends android.support.v7.widget.AppCompatButton {
         isMatched = matched;
     }
 
+    /**
+     * Gets the drawable id from activity that is
+     * associated with this object.
+     * @return the drawable ID.
+     */
     public int getFrontDrawableId() {
         return frontDrawableId;
     }
 
+    /**
+     * Sets the front drawable ID.
+     * @param frontDrawableId the drawable ID that will be
+     *                        used.
+     */
     public void setFrontDrawableId(int frontDrawableId) {
         this.frontDrawableId = frontDrawableId;
     }

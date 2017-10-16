@@ -8,17 +8,31 @@ import android.widget.GridLayout;
 
 import java.util.Random;
 
+/**
+ * The activity of our 4x4 memory game with colors.
+ * To win, find all pairs.
+ */
 public class Game4x4Activity extends AppCompatActivity implements View.OnClickListener{
 
+    /** Initialize the number of elements */
     private int numberOfElements;
+
+    /** Initialize our array of buttons */
     private MemoryButton[] buttons;
 
+    /** Initialize the locations of our buttons */
     private int[] buttonGraphicLocations;
+
+    /** Initialize the buttons images */
     private int[] buttonGraphics;
 
+    /** Initialize the selected button object */
     private MemoryButton selectedButton1;
+
+    /** Initialize the second selected button object */
     private MemoryButton selectedButton2;
 
+    /** Initialize the state of the activity */
     private boolean isBusy = false;
 
     @Override
@@ -27,7 +41,7 @@ public class Game4x4Activity extends AppCompatActivity implements View.OnClickLi
         setContentView(R.layout.activity_game4x4);
 
         //Create our layout of the 4x4 game.
-        GridLayout gridLayout = (GridLayout)findViewById(R.id.grid_layout_4x4);
+        GridLayout gridLayout = (GridLayout) findViewById(R.id.grid_layout_4x4);
 
         //Match our number of columns and rows with the grid.
         int numColumns = gridLayout.getColumnCount();
@@ -52,9 +66,9 @@ public class Game4x4Activity extends AppCompatActivity implements View.OnClickLi
         shuffleButtonGraphics();
 
         //Create our memory buttons and connect them to gridlayout.
-        for(int r = 0; r < numRows; r++){
-            for(int c = 0; c < numColumns; c++){
-                MemoryButton tempButton = new MemoryButton(this,r,c, buttonGraphics[buttonGraphicLocations[r * numColumns + c]]);
+        for( int r = 0; r < numRows; r++) {
+            for( int c = 0; c < numColumns; c++) {
+                MemoryButton tempButton = new MemoryButton(this,r , c, buttonGraphics[buttonGraphicLocations[r * numColumns + c]]);
                 tempButton.setId(View.generateViewId());
                 tempButton.setOnClickListener(this);
                 buttons[r * numColumns + c] = tempButton;
@@ -68,14 +82,14 @@ public class Game4x4Activity extends AppCompatActivity implements View.OnClickLi
      * Set the images to the buttons.
      */
     private void setButtonGraphics(){
-        buttonGraphics[0] = R.drawable.button_1;
-        buttonGraphics[1] = R.drawable.button_2;
-        buttonGraphics[2] = R.drawable.button_3;
-        buttonGraphics[3] = R.drawable.button_4;
-        buttonGraphics[4] = R.drawable.button_5;
-        buttonGraphics[5] = R.drawable.button_6;
-        buttonGraphics[6] = R.drawable.button_7;
-        buttonGraphics[7] = R.drawable.button_8;
+        buttonGraphics[0] = R.drawable.red;
+        buttonGraphics[1] = R.drawable.blue;
+        buttonGraphics[2] = R.drawable.green;
+        buttonGraphics[3] = R.drawable.orange;
+        buttonGraphics[4] = R.drawable.yellow;
+        buttonGraphics[5] = R.drawable.pink;
+        buttonGraphics[6] = R.drawable.purple;
+        buttonGraphics[7] = R.drawable.black;
     }
     /**
      * Shuffles the images/graphics for our game.
@@ -83,10 +97,10 @@ public class Game4x4Activity extends AppCompatActivity implements View.OnClickLi
     protected void shuffleButtonGraphics(){
         Random rand = new Random();
 
-        for(int i = 0; i < numberOfElements; i++){
+        for( int i = 0; i < numberOfElements; i++) {
             buttonGraphicLocations[i] = i % (numberOfElements / 2);
         }
-        for(int i = 0; i < numberOfElements; i++){
+        for( int i = 0; i < numberOfElements; i++) {
             int temp = buttonGraphicLocations[i];
 
             int swapIndex = rand.nextInt(16);
@@ -104,14 +118,14 @@ public class Game4x4Activity extends AppCompatActivity implements View.OnClickLi
 
         int check = 0;
         int numElementsCheck = numberOfElements - 1;
-        for(int i = 0; i < numberOfElements; i++){
-            if(buttons[i].isFlipped){
+        for( int i = 0; i < numberOfElements; i++) {
+            if( buttons[i].isFlipped) {
                 check++;
                 //Log.d("Flipped?", "button is flipped?");
             }
         }
 
-        if(check == numElementsCheck){
+        if( check == numElementsCheck) {
             Log.d("finished", String.valueOf(check));
         }
     }
@@ -124,23 +138,23 @@ public class Game4x4Activity extends AppCompatActivity implements View.OnClickLi
     public void onClick(View view) {
         checkClear();
         Log.d("?", "clicked");
-        if(isBusy){
+        if( isBusy) {
             return;
         }
         MemoryButton button = (MemoryButton) view;
 
-        if(button.isMatched()){
+        if( button.isMatched()) {
             return;
         }
-        if(selectedButton1 == null){
+        if( selectedButton1 == null) {
             selectedButton1 = button;
             selectedButton1.flip();
             return;
         }
-        if(selectedButton1.getId() == button.getId()){
+        if( selectedButton1.getId() == button.getId()) {
             return;
         }
-        if(selectedButton1.getFrontDrawableId() == button.getFrontDrawableId()){
+        if( selectedButton1.getFrontDrawableId() == button.getFrontDrawableId()) {
             button.flip();
             button.setMatched(true);
             selectedButton1.setMatched(true);
@@ -168,7 +182,7 @@ public class Game4x4Activity extends AppCompatActivity implements View.OnClickLi
                 public void run() {
                     selectedButton2.flip();
                     selectedButton1.flip();
-                    selectedButton1= null;
+                    selectedButton1 = null;
                     selectedButton2 = null;
                     isBusy = false;
                 }
