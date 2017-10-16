@@ -9,6 +9,7 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
+    //instantiate our buttons.
     private static Button button4x4;
     private static Button mathButton;
 
@@ -22,7 +23,9 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
+    /**
+     * Change activity when memory game is pressed.
+     */
     public void onClick4x4ButtonListener(){
         button4x4 = (Button)findViewById(R.id.button_4x4_game);
         button4x4.setOnClickListener(new View.OnClickListener() {
@@ -36,6 +39,9 @@ public class MainActivity extends AppCompatActivity {
         );
     }
 
+    /**
+     * Change activity when math game is pressed.
+     */
     public void onClickMathButtonListener(){
         mathButton = (Button)findViewById(R.id.mathButton);
         mathButton.setOnClickListener(

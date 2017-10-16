@@ -18,7 +18,6 @@
         </activity>
         <activity android:name="com.example.BrainGames.memorygame.Game4x4Activity" />
         <activity android:name="com.example.BrainGames.memorygame.TestActivity" />
-        <activity android:name="com.example.BrainGames.memorygame.TestActivity2" />
         <activity android:name="com.example.BrainGames.memorygame.MathAdditionActivity" />
         <activity android:name="com.example.BrainGames.memorygame.MathActivity"></activity>
     </application>
