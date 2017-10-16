@@ -1,13 +1,14 @@
-package com.example.andyhung.memorygame;
+package com.example.BrainGames.memorygame;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class TestActivity2 extends AppCompatActivity {
-
+public class TestActivity extends AppCompatActivity {
+    private MemoryButton memoryButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_test2);
+        setContentView(R.layout.activity_test);
+
     }
 }

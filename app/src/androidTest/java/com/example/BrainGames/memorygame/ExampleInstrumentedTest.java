@@ -1,4 +1,4 @@
-package com.example.andyhung.memorygame;
+package com.example.BrainGames.memorygame;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

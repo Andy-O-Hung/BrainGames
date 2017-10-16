@@ -1,4 +1,4 @@
-package com.example.andyhung.memorygame;
+package com.example.BrainGames.memorygame;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -6,7 +6,7 @@ import android.widget.TextView;
 
 import java.util.Random;
 
-public class MathAditionActivity extends AppCompatActivity {
+public class MathAdditionActivity extends AppCompatActivity {
     private int additionLevel;
     private int result;
     private int[] additionFactors;
@@ -14,7 +14,7 @@ public class MathAditionActivity extends AppCompatActivity {
     private Random rand = new Random();
     private TextView displayAddition;
     private String displayString;
-    private TextView addInput;;
+    private TextView addInput;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

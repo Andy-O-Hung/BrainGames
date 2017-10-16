@@ -1,15 +1,12 @@
-package com.example.andyhung.memorygame;
+package com.example.BrainGames.memorygame;
 
-import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.GridLayout;
 
 import java.util.Random;
-import java.util.logging.Handler;
 
 public class Game4x4Activity extends AppCompatActivity implements View.OnClickListener{
 
@@ -24,7 +21,7 @@ public class Game4x4Activity extends AppCompatActivity implements View.OnClickLi
 
     private boolean isBusy = false;
 
-
+// brown?
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -1,13 +1,9 @@
-package com.example.andyhung.memorygame;
+package com.example.BrainGames.memorygame;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
-import android.os.Build;
 import android.support.v7.widget.AppCompatDrawableManager;
-import android.widget.Button;
 import android.widget.GridLayout;
-
-import com.example.andyhung.memorygame.R;
 
 /**
  * Created by Andy Hung on 9/26/2017.
@@ -49,6 +45,9 @@ public class MemoryButton extends android.support.v7.widget.AppCompatButton {
         setLayoutParams(tempParams);
 
     }
+
+
+
 
     public boolean isMatched() {
         return isMatched;

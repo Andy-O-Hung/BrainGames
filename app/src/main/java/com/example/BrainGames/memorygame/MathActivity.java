@@ -1,4 +1,4 @@
-package com.example.andyhung.memorygame;
+package com.example.BrainGames.memorygame;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -24,7 +24,7 @@ public class MathActivity extends AppCompatActivity {
                 new View.OnClickListener(){
                     @Override
                     public void onClick(View v){
-                        Intent mathAditionActivity = new Intent(MathActivity.this, MathAditionActivity.class);
+                        Intent mathAditionActivity = new Intent(MathActivity.this, MathAdditionActivity.class);
                         startActivity(mathAditionActivity);
                     }
                 }

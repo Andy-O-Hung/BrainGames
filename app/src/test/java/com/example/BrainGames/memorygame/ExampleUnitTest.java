@@ -1,4 +1,4 @@
-package com.example.andyhung.memorygame;
+package com.example.BrainGames.memorygame;
 
 import org.junit.Test;
 
@@ -14,4 +14,6 @@ public class ExampleUnitTest {
     public void addition_isCorrect() throws Exception {
         assertEquals(4, 2 + 2);
     }
+
+
 }
