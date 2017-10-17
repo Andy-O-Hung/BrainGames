@@ -14,219 +14,218 @@ public class Math {
 
     private int[] numbers;
 
-    private Random randOne;
 
-    private Random randTwo;
-    public Math(int operation, int level){
+    public Math(int level){
 
         this.level = level;
     }
 
     public int[] getNumbers(){
-        return numbers;
+        int[] tempNumbers = numbers;
+        return tempNumbers;
     }
 
-    public int[] generateSum() {
+    public void generateSum() {
         //private Random rand = new Random();
-        numbers = new int[2];
+        numbers = new int[3];
         if ( level == 1){
 
-            for (int x = 0; x < 1; x++){
-                randOne = new Random();
-                numbers[x] = randOne.nextInt(9 + 1 -9) - 9;
+            for (int x = 0; x < 2; x++){
+                //randOne = new Random();
+                numbers[x] = -9 + new Random().nextInt(10);
             }
             numbers[2] = numbers[0] + numbers[1];
         }
 
         if ( level == 2){
 
-            randOne = new Random();
-            numbers[0] = randOne.nextInt(9 + 1 -9) - 9;
-            randTwo = new Random();
-            numbers[1] = randTwo.nextInt(99 + 1 -99) -99;
+
+            numbers[0] = -9 + new Random().nextInt(10);
+
+            numbers[1] = -99 + new Random().nextInt(100);
             numbers[2] = numbers[0] + numbers[1];
         }
 
         if ( level == 3){
 
-            for (int x = 0; x < 1; x++){
-                randOne = new Random();
-                numbers[x] = randOne.nextInt(99 + 1 -99) - 99;
+            for (int x = 0; x < 2; x++){
+
+                numbers[x] = -99 + new Random().nextInt(100);
             }
             numbers[2] = numbers[0] + numbers[1];
         }
 
         if ( level == 4){
 
-            randOne = new Random();
-            numbers[0] = randOne.nextInt(99 + 1 -99) - 99;
-            randTwo = new Random();
-            numbers[1] = randTwo.nextInt(999 + 1 -999) -999;
+
+            numbers[0] = -99 + new Random().nextInt(100);
+
+            numbers[1] = -999 + new Random().nextInt(1000);
             numbers[2] = numbers[0] + numbers[1];
         }
 
         if ( level == 5){
 
-            for (int x = 0; x < 1; x++){
-                randOne = new Random();
-                numbers[x] = randOne.nextInt(999 + 1 -999) - 999;
+            for (int x = 0; x < 2; x++){
+
+                numbers[x] = -999 + new Random().nextInt(1000);
             }
             numbers[2] = numbers[0] + numbers[1];
         }
 
-        return numbers;
+
     }
 
-    public int[] generateSub() {
+    public void generateSub() {
         //private Random rand = new Random();
-        numbers = new int[2];
+        numbers = new int[3];
         if ( level == 1){
 
-            for (int x = 0; x < 1; x++){
-                randOne = new Random();
-                numbers[x] = randOne.nextInt(9 + 1 -9) - 9;
+            for (int x = 0; x < 2; x++){
+
+                numbers[x] = -9 + new Random().nextInt(10);
             }
             numbers[2] = numbers[0] - numbers[1];
         }
 
         if ( level == 2){
 
-            randOne = new Random();
-            numbers[0] = randOne.nextInt(9 + 1 -9) - 9;
-            randTwo = new Random();
-            numbers[1] = randTwo.nextInt(99 + 1 -99) -99;
+
+            numbers[0] = -9 + new Random().nextInt(10);
+
+            numbers[1] = -99 + new Random().nextInt(100);
             numbers[2] = numbers[0] - numbers[1];
         }
 
         if ( level == 3){
 
-            for (int x = 0; x < 1; x++){
-                randOne = new Random();
-                numbers[x] = randOne.nextInt(99 + 1 -99) - 99;
+            for (int x = 0; x < 2; x++){
+
+                numbers[x] = -99 + new Random().nextInt(100);
             }
             numbers[2] = numbers[0] - numbers[1];
         }
 
         if ( level == 4){
 
-            randOne = new Random();
-            numbers[0] = randOne.nextInt(99 + 1 -99) - 99;
-            randTwo = new Random();
-            numbers[1] = randTwo.nextInt(999 + 1 -999) -999;
+
+            numbers[0] = -99 + new Random().nextInt(100);
+
+            numbers[1] = -999 + new Random().nextInt(1000);
             numbers[2] = numbers[0] - numbers[1];
         }
 
         if ( level == 5){
 
-            for (int x = 0; x < 1; x++){
-                randOne = new Random();
-                numbers[x] = randOne.nextInt(999 + 1 -999) - 999;
+            for (int x = 0; x < 2; x++){
+
+                numbers[x] = -999 + new Random().nextInt(1000);
             }
             numbers[2] = numbers[0] - numbers[1];
         }
 
-        return numbers;
+
     }
 
-    public int[] generateMul() {
+    public void generateMul() {
         //private Random rand = new Random();
-        numbers = new int[2];
+        numbers = new int[3];
         if ( level == 1){
 
-            for (int x = 0; x < 1; x++){
-                randOne = new Random();
-                numbers[x] = randOne.nextInt(9 + 1 -9) - 9;
+            for (int x = 0; x < 2; x++){
+
+                numbers[x] = -9 + new Random().nextInt(10);
             }
             numbers[2] = numbers[0] * numbers[1];
         }
 
         if ( level == 2){
 
-            randOne = new Random();
-            numbers[0] = randOne.nextInt(9 + 1 -9) - 9;
-            randTwo = new Random();
-            numbers[1] = randTwo.nextInt(99 + 1 -99) -99;
+
+            numbers[0] = -9 + new Random().nextInt(10);
+
+            numbers[1] = -99 + new Random().nextInt(100);
             numbers[2] = numbers[0] * numbers[1];
         }
 
         if ( level == 3){
 
-            for (int x = 0; x < 1; x++){
-                randOne = new Random();
-                numbers[x] = randOne.nextInt(99 + 1 -99) - 99;
+            for (int x = 0; x < 2; x++){
+
+                numbers[x] = -99 + new Random().nextInt(100);
             }
             numbers[2] = numbers[0] * numbers[1];
         }
 
         if ( level == 4){
 
-            randOne = new Random();
-            numbers[0] = randOne.nextInt(99 + 1 -99) - 99;
-            randTwo = new Random();
-            numbers[1] = randTwo.nextInt(999 + 1 -999) -999;
+
+            numbers[0] = -99 + new Random().nextInt(100);
+
+            numbers[1] = -999 + new Random().nextInt(1000);
             numbers[2] = numbers[0] * numbers[1];
         }
 
         if ( level == 5){
 
-            for (int x = 0; x < 1; x++){
-                randOne = new Random();
-                numbers[x] = randOne.nextInt(999 + 1 -999) - 999;
+            for (int x = 0; x < 2; x++){
+
+                numbers[x] = -999 + new Random().nextInt(1000);
             }
             numbers[2] = numbers[0] * numbers[1];
         }
 
-        return numbers;
+
     }
 
-    public int[] generateDiv() {
+    public void generateDiv() {
         //private Random rand = new Random();
-        numbers = new int[2];
+        numbers = new int[3];
         if ( level == 1){
 
-            for (int x = 0; x < 1; x++){
-                randOne = new Random();
-                numbers[x] = randOne.nextInt(9 + 1 -9) - 9;
+            for (int x = 0; x < 2; x++){
+
+                numbers[x] = -9 + new Random().nextInt(10);
             }
             numbers[2] = numbers[0] / numbers[1];
         }
 
         if ( level == 2){
 
-            randOne = new Random();
-            numbers[0] = randOne.nextInt(9 + 1 -9) - 9;
-            randTwo = new Random();
-            numbers[1] = randTwo.nextInt(99 + 1 -99) -99;
+
+            numbers[0] = -9 + new Random().nextInt(10);
+
+            numbers[1] = -99 + new Random().nextInt(100);
             numbers[2] = numbers[0] / numbers[1];
         }
 
         if ( level == 3){
 
-            for (int x = 0; x < 1; x++){
-                randOne = new Random();
-                numbers[x] = randOne.nextInt(99 + 1 -99) - 99;
+            for (int x = 0; x < 2; x++){
+
+                numbers[x] = -99 + new Random().nextInt(100);
             }
             numbers[2] = numbers[0] / numbers[1];
         }
 
         if ( level == 4){
 
-            randOne = new Random();
-            numbers[0] = randOne.nextInt(99 + 1 -99) - 99;
-            randTwo = new Random();
-            numbers[1] = randTwo.nextInt(999 + 1 -999) -999;
+
+            numbers[0] = -99 + new Random().nextInt(100);
+
+            numbers[1] = -999 + new Random().nextInt(1000);
             numbers[2] = numbers[0] / numbers[1];
         }
 
         if ( level == 5){
 
-            for (int x = 0; x < 1; x++){
-                randOne = new Random();
-                numbers[x] = randOne.nextInt(999 + 1 -999) - 999;
+            for (int x = 0; x < 2; x++){
+
+                numbers[x] = -999 + new Random().nextInt(1000);
             }
             numbers[2] = numbers[0] / numbers[1];
         }
 
-        return numbers;
+
     }
 }

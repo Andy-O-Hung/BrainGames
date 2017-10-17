@@ -85,7 +85,7 @@ public class MathAdditionActivity extends AppCompatActivity {
     }
 
     private void checkAnswer(){
-       // result = Integer.parseInt(addInput.getText().toString());
+        // result = Integer.parseInt(addInput.getText().toString());
 
     }
 }
