@@ -1,4 +1,4 @@
-package com.example.BrainGames.memorygame;
+package com.example.BrainGames.BrainGamesComposition;
 
 import java.util.Random;
 

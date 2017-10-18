@@ -1,4 +1,4 @@
-package com.example.BrainGames.memorygame;
+package com.example.BrainGames.BrainGamesComposition;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,12 +8,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 
-public class MathSubtractActivity extends AppCompatActivity {
 
+public class MathAdditionActivityV2 extends AppCompatActivity {
     private static Button checkButton;
-    private TextView displaySubtraction;
+    private TextView displayAddition;
     private int userInput;
-    private EditText subInput;
+    private EditText addInput;
     private Math math;
     private int[] results;
     private int level = 1;
@@ -21,41 +21,35 @@ public class MathSubtractActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_math_subtract);
-        displaySubtraction = (TextView)findViewById(R.id.displaySubtractionQuestion);
-        generateSubtraction();
-        displaySubtraction.setText(results[0] + " - " + results[1] + " =  ?");
-        subInput = (EditText) findViewById(R.id.inputSubtraction);
-        subInput.setText("");
+        setContentView(R.layout.activity_math_addition_v2);
+        displayAddition = (TextView)findViewById(R.id.displayAdditionQuestion);
+        generateAddition();
+        displayAddition.setText(results[0] + " + " + results[1] + " =  ?");
+        addInput = (EditText) findViewById(R.id.additionInput);
+        addInput.setText("");
         OnClickCheckButtonListener();
     }
-    public void generateSubtraction(){
+
+    public void generateAddition(){
         math = new Math(level);
-        math.generateSub();
+        math.generateSum();
         results = math.getNumbers();
     }
-    public void OnClickCheckButtonListener(){
-        checkButton = (Button) findViewById(R.id.checkSubAnswerButton);
-        checkButton.setText("Check");
-        checkButton.setOnClickListener(
-                new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        checkAnswer();
-                    }
-                }
-        );
-    }
+
+    /**
+     * Checks if the answer is correct
+     * and generate new question.
+     */
     private void checkAnswer(){
         //To create delay so that the
         //user knows correct or wrong.
         final android.os.Handler handler = new android.os.Handler();
         try
         {
-            userInput = Integer.valueOf(String.valueOf(subInput.getText()));
+            userInput = Integer.valueOf(String.valueOf(addInput.getText()));
         } catch (NumberFormatException ex)
         {
-            displaySubtraction.setText("ENTER A INTEGER!");
+            displayAddition.setText("ENTER A INTEGER!");
             handler.postDelayed(new Runnable() {
                 @Override
                 public void run() {
@@ -65,11 +59,11 @@ public class MathSubtractActivity extends AppCompatActivity {
             return;
         }
         if(results[2] == userInput){
-            displaySubtraction.setText("CORRECT");
+            displayAddition.setText("CORRECT");
             score++;
         }
         else{
-            displaySubtraction.setText("WRONG");
+            displayAddition.setText("WRONG");
         }
 
         //Create delay so user knows if its right or wrong.
@@ -82,6 +76,7 @@ public class MathSubtractActivity extends AppCompatActivity {
 
 
     }
+
     /**
      * Generates new Question and resets
      * user input.
@@ -94,9 +89,26 @@ public class MathSubtractActivity extends AppCompatActivity {
         //Add more score logic
 
         Math newMath = new Math(level);
-        newMath.generateSub();
+        newMath.generateSum();
         results = newMath.getNumbers();
-        displaySubtraction.setText(results[0] + " - " + results[1] + " =  ?");
-        subInput.setText("");
+        displayAddition.setText(results[0] + " + " + results[1] + " =  ?");
+        addInput.setText("");
+    }
+
+    /**
+     * Action Listener for our check button
+     * that will run through the check.
+     */
+    public void OnClickCheckButtonListener(){
+        checkButton = (Button) findViewById(R.id.checkButtonActivity);
+        checkButton.setText("Check");
+        checkButton.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        checkAnswer();
+                    }
+                }
+        );
     }
 }

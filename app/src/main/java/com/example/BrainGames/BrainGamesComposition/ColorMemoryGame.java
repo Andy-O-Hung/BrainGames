@@ -1,4 +1,4 @@
-package com.example.BrainGames.memorygame;
+package com.example.BrainGames.BrainGamesComposition;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

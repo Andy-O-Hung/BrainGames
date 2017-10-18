@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MemoryGame</string>
-    <string name="main_Memory">MemoryGame</string>
+    <string name="app_name">Brain Games</string>
+    <string name="main_Memory">Brain Games</string>
     <string name="menu_options_4x4_game">4x4 Game</string>
 </resources>

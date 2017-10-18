@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.BrainGames.memorygame">
+    package="com.example.BrainGames.BrainGamesComposition">
 
     <application
         android:allowBackup="true"
@@ -9,17 +9,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name="com.example.BrainGames.BrainGamesComposition.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ColorMemoryGame" />
-        <activity android:name=".MathActivity" />
-        <activity android:name=".MathAdditionActivityV2" />
-        <activity android:name=".MathSubtractActivity"></activity>
+        <activity android:name="com.example.BrainGames.BrainGamesComposition.ColorMemoryGame" />
+        <activity android:name="com.example.BrainGames.BrainGamesComposition.MathActivity" />
+        <activity android:name="com.example.BrainGames.BrainGamesComposition.MathAdditionActivityV2" />
+        <activity android:name="com.example.BrainGames.BrainGamesComposition.MathSubtractActivity"></activity>
     </application>
 
 </manifest>
