@@ -19,8 +19,8 @@ public class MathAdditionActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_math_addition);
-        displayAddition = (TextView)findViewById(R.id.displayAdditionQuestion);
+        //setContentView(R.layout.activity_math_addition);
+        //displayAddition = (TextView)findViewById(R.id.displayAdditionQuestion);
         //additionFactors = generateSum(getAdditionLevel());
         displayString = String.valueOf(additionFactors[0]) + " + " + String.valueOf(additionFactors[1]) + " = ?";
         displayAddition.setText(displayString);

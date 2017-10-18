@@ -24,7 +24,7 @@ public class MathActivity extends AppCompatActivity {
                 new View.OnClickListener(){
                     @Override
                     public void onClick(View v){
-                        Intent mathAdditionActivity = new Intent(MathActivity.this, MathAdditionActivity.class);
+                        Intent mathAdditionActivity = new Intent(MathActivity.this, MathAdditionActivityV2.class);
                         startActivity(mathAdditionActivity);
                     }
                 }
