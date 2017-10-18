@@ -18,8 +18,8 @@
         </activity>
         <activity android:name=".ColorMemoryGame" />
         <activity android:name=".MathActivity" />
-
-        <activity android:name=".MathAdditionActivityV2"></activity>
+        <activity android:name=".MathAdditionActivityV2" />
+        <activity android:name=".MathSubtractActivity"></activity>
     </application>
 
 </manifest>

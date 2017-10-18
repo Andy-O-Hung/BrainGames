@@ -23,12 +23,10 @@ public class MathAdditionActivityV2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_math_addition_v2);
         displayAddition = (TextView)findViewById(R.id.displayAdditionQuestion);
-        //additionFactors = generateSum(getAdditionLevel());
-        //displayString = String.valueOf(additionFactors[0]) + " + " + String.valueOf(additionFactors[1]) + " = ?";
-        //displayAddition.setText(displayString);
         generateAddition();
         displayAddition.setText(results[0] + " + " + results[1] + " =  ?");
         addInput = (EditText) findViewById(R.id.additionInput);
+        addInput.setText("");
         OnClickCheckButtonListener();
     }
 
@@ -38,16 +36,72 @@ public class MathAdditionActivityV2 extends AppCompatActivity {
         results = math.getNumbers();
     }
 
+    /**
+     * Checks if the answer is correct
+     * and generate new question.
+     */
     private void checkAnswer(){
-        userInput = Integer.valueOf(String.valueOf(addInput.getText()));
+        //To create delay so that the
+        //user knows correct or wrong.
+        final android.os.Handler handler = new android.os.Handler();
+        try
+        {
+            userInput = Integer.valueOf(String.valueOf(addInput.getText()));
+        } catch (NumberFormatException ex)
+        {
+            displayAddition.setText("ENTER A INTEGER!");
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    NewQuestion();
+                }
+            }, 300);
+            return;
+        }
         if(results[2] == userInput){
             displayAddition.setText("CORRECT");
+            score++;
         }
         else{
             displayAddition.setText("WRONG");
         }
 
+        //Create delay so user knows if its right or wrong.
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                NewQuestion();
+            }
+        }, 300);
+
+
+
+
+
     }
+
+    /**
+     * Generates new Question and resets
+     * user input.
+     */
+    private void NewQuestion() {
+        if(score == 2){
+            level++;
+        }
+
+        //Add more score logic
+
+        Math newMath = new Math(level);
+        newMath.generateSum();
+        results = newMath.getNumbers();
+        displayAddition.setText(results[0] + " + " + results[1] + " =  ?");
+        addInput.setText("");
+    }
+
+    /**
+     * Action Listener for our check button
+     * that will run through the check.
+     */
     public void OnClickCheckButtonListener(){
         checkButton = (Button) findViewById(R.id.checkButtonActivity);
         checkButton.setOnClickListener(
