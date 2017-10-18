@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.GridLayout;
+import android.widget.TextView;
 
 import java.util.Random;
 
@@ -35,11 +36,21 @@ public class ColorMemoryGame extends AppCompatActivity implements View.OnClickLi
     /** Initialize the state of the activity */
     private boolean isBusy = false;
 
+    /** Display state of game */
+    private TextView state;
+
+    /** Display amount of clicks */
+    private TextView clickCounter;
+
+    private int clicks = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game4x4color);
-
+        state = (TextView) findViewById(R.id.colorStateActivity);
+        state.setText("In Progress");
+        clickCounter = (TextView) findViewById(R.id.clicksCounterActivity);
+        clickCounter.setText(String.valueOf(clicks));
         //Create our layout of the 4x4 game.
         GridLayout gridLayout = (GridLayout) findViewById(R.id.grid_layout_4x4);
 
@@ -126,10 +137,25 @@ public class ColorMemoryGame extends AppCompatActivity implements View.OnClickLi
         }
 
         if( check == numElementsCheck) {
-            Log.d("finished", String.valueOf(check));
+            final android.os.Handler handler = new android.os.Handler();
+            state.setText("DONE!");
+            //Not working why?
+            clickCounter.setText("You won with " + String.valueOf(clicks) + " clicks!");
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    recreate();
+                }
+            }, 1500);
+            //Log.d("finished", String.valueOf(check));
+
         }
     }
 
+    public void clicks(){
+        clicks++;
+        clickCounter.setText(String.valueOf(clicks));
+    }
     /**
      * Our action listener whenever a button is clicked.
      * @param view the contents of the activity
@@ -138,22 +164,33 @@ public class ColorMemoryGame extends AppCompatActivity implements View.OnClickLi
     public void onClick(View view) {
         checkClear();
         Log.d("?", "clicked");
+
+        //So it doesn't crash.
         if( isBusy) {
             return;
         }
         MemoryButton button = (MemoryButton) view;
 
+        //If matched,
         if( button.isMatched()) {
             return;
         }
+
+        //Set first button if null.
         if( selectedButton1 == null) {
             selectedButton1 = button;
             selectedButton1.flip();
+            clicks();
             return;
         }
+
+
         if( selectedButton1.getId() == button.getId()) {
             return;
         }
+
+        //If two buttons are the same, flip, change variables
+        //and reset.
         if( selectedButton1.getFrontDrawableId() == button.getFrontDrawableId()) {
             button.flip();
             button.setMatched(true);
@@ -164,13 +201,15 @@ public class ColorMemoryGame extends AppCompatActivity implements View.OnClickLi
 
             selectedButton1 = null;
 
+            clicks();
         }
 
-
+        //If not the same, let the user see then reset.
         else{
             selectedButton2 = button;
             selectedButton2.flip();
             isBusy = true;
+            clicks();
 
             //Creates a delay so the user knows what the second button was.
             final android.os.Handler handler = new android.os.Handler();
