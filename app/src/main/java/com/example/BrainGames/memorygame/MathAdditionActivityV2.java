@@ -75,9 +75,6 @@ public class MathAdditionActivityV2 extends AppCompatActivity {
         }, 300);
 
 
-
-
-
     }
 
     /**
@@ -104,6 +101,7 @@ public class MathAdditionActivityV2 extends AppCompatActivity {
      */
     public void OnClickCheckButtonListener(){
         checkButton = (Button) findViewById(R.id.checkButtonActivity);
+        checkButton.setText("Check");
         checkButton.setOnClickListener(
                 new View.OnClickListener() {
                     @Override

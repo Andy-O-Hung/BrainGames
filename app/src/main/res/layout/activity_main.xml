@@ -10,47 +10,30 @@
     tools:layout_editor_absoluteY="81dp"
     tools:layout_editor_absoluteX="0dp">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        tools:text="@string/main_Memory"
-        android:id="@+id/textView"
-        tools:layout_constraintTop_creator="1"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="12dp"
-        app:layout_constraintTop_toBottomOf="@+id/button_4x4_game"
-        tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toLeftOf="@+id/button_4x4_game" />
-
     <Button
         android:id="@+id/button_4x4_game"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/menu_options_4x4_game"
-        tools:text="@string/menu_options_4x4_game"
+        android:text="Color Memory Game"
         tools:layout_constraintTop_creator="1"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="188dp"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintBottom_creator="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toLeftOf="@+id/mathButton"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/mathButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
-        tools:layout_constraintTop_creator="1"
+        android:layout_marginStart="28dp"
+        android:text="Math Games"
         tools:layout_constraintBottom_creator="1"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
-        android:layout_marginStart="138dp"
-        android:layout_marginTop="100dp"
+        app:layout_constraintBottom_toTopOf="@+id/button_4x4_game"
         tools:layout_constraintLeft_creator="1"
-        android:layout_marginBottom="100dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginLeft="237dp"
-        app:layout_constraintVertical_bias="1.0" />
+        android:layout_marginBottom="65dp"
+        app:layout_constraintLeft_toLeftOf="@+id/button_4x4_game" />
 
 </android.support.constraint.ConstraintLayout>
