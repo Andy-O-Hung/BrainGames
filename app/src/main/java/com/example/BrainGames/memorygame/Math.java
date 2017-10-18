@@ -32,7 +32,7 @@ public class Math {
 
             for (int x = 0; x < 2; x++){
                 //randOne = new Random();
-                numbers[x] = -9 + new Random().nextInt(10);
+                numbers[x] = -9 + new Random().nextInt(19);
             }
             numbers[2] = numbers[0] + numbers[1];
         }
@@ -40,9 +40,9 @@ public class Math {
         if ( level == 2){
 
 
-            numbers[0] = -9 + new Random().nextInt(10);
+            numbers[0] = -9 + new Random().nextInt(19);
 
-            numbers[1] = -99 + new Random().nextInt(100);
+            numbers[1] = -99 + new Random().nextInt(199);
             numbers[2] = numbers[0] + numbers[1];
         }
 
@@ -58,9 +58,9 @@ public class Math {
         if ( level == 4){
 
 
-            numbers[0] = -99 + new Random().nextInt(100);
+            numbers[0] = -99 + new Random().nextInt(199);
 
-            numbers[1] = -999 + new Random().nextInt(1000);
+            numbers[1] = -999 + new Random().nextInt(1999);
             numbers[2] = numbers[0] + numbers[1];
         }
 
@@ -68,7 +68,7 @@ public class Math {
 
             for (int x = 0; x < 2; x++){
 
-                numbers[x] = -999 + new Random().nextInt(1000);
+                numbers[x] = -999 + new Random().nextInt(1999);
             }
             numbers[2] = numbers[0] + numbers[1];
         }
@@ -83,7 +83,7 @@ public class Math {
 
             for (int x = 0; x < 2; x++){
 
-                numbers[x] = -9 + new Random().nextInt(10);
+                numbers[x] = -9 + new Random().nextInt(19);
             }
             numbers[2] = numbers[0] - numbers[1];
         }
@@ -91,9 +91,9 @@ public class Math {
         if ( level == 2){
 
 
-            numbers[0] = -9 + new Random().nextInt(10);
+            numbers[0] = -9 + new Random().nextInt(19);
 
-            numbers[1] = -99 + new Random().nextInt(100);
+            numbers[1] = -99 + new Random().nextInt(199);
             numbers[2] = numbers[0] - numbers[1];
         }
 
@@ -101,7 +101,7 @@ public class Math {
 
             for (int x = 0; x < 2; x++){
 
-                numbers[x] = -99 + new Random().nextInt(100);
+                numbers[x] = -99 + new Random().nextInt(199);
             }
             numbers[2] = numbers[0] - numbers[1];
         }
@@ -109,9 +109,9 @@ public class Math {
         if ( level == 4){
 
 
-            numbers[0] = -99 + new Random().nextInt(100);
+            numbers[0] = -99 + new Random().nextInt(199);
 
-            numbers[1] = -999 + new Random().nextInt(1000);
+            numbers[1] = -999 + new Random().nextInt(1999);
             numbers[2] = numbers[0] - numbers[1];
         }
 
@@ -119,7 +119,7 @@ public class Math {
 
             for (int x = 0; x < 2; x++){
 
-                numbers[x] = -999 + new Random().nextInt(1000);
+                numbers[x] = -999 + new Random().nextInt(1999);
             }
             numbers[2] = numbers[0] - numbers[1];
         }
@@ -134,7 +134,7 @@ public class Math {
 
             for (int x = 0; x < 2; x++){
 
-                numbers[x] = -9 + new Random().nextInt(10);
+                numbers[x] = -9 + new Random().nextInt(19);
             }
             numbers[2] = numbers[0] * numbers[1];
         }
@@ -142,9 +142,9 @@ public class Math {
         if ( level == 2){
 
 
-            numbers[0] = -9 + new Random().nextInt(10);
+            numbers[0] = -9 + new Random().nextInt(19);
 
-            numbers[1] = -99 + new Random().nextInt(100);
+            numbers[1] = -99 + new Random().nextInt(199);
             numbers[2] = numbers[0] * numbers[1];
         }
 
@@ -152,7 +152,7 @@ public class Math {
 
             for (int x = 0; x < 2; x++){
 
-                numbers[x] = -99 + new Random().nextInt(100);
+                numbers[x] = -99 + new Random().nextInt(199);
             }
             numbers[2] = numbers[0] * numbers[1];
         }
@@ -160,9 +160,9 @@ public class Math {
         if ( level == 4){
 
 
-            numbers[0] = -99 + new Random().nextInt(100);
+            numbers[0] = -99 + new Random().nextInt(199);
 
-            numbers[1] = -999 + new Random().nextInt(1000);
+            numbers[1] = -999 + new Random().nextInt(1999);
             numbers[2] = numbers[0] * numbers[1];
         }
 
@@ -170,7 +170,7 @@ public class Math {
 
             for (int x = 0; x < 2; x++){
 
-                numbers[x] = -999 + new Random().nextInt(1000);
+                numbers[x] = -999 + new Random().nextInt(1999);
             }
             numbers[2] = numbers[0] * numbers[1];
         }
@@ -185,7 +185,7 @@ public class Math {
 
             for (int x = 0; x < 2; x++){
 
-                numbers[x] = -9 + new Random().nextInt(10);
+                numbers[x] = -9 + new Random().nextInt(19);
             }
             numbers[2] = numbers[0] / numbers[1];
         }
@@ -193,9 +193,9 @@ public class Math {
         if ( level == 2){
 
 
-            numbers[0] = -9 + new Random().nextInt(10);
+            numbers[0] = -9 + new Random().nextInt(19);
 
-            numbers[1] = -99 + new Random().nextInt(100);
+            numbers[1] = -99 + new Random().nextInt(199);
             numbers[2] = numbers[0] / numbers[1];
         }
 
@@ -203,7 +203,7 @@ public class Math {
 
             for (int x = 0; x < 2; x++){
 
-                numbers[x] = -99 + new Random().nextInt(100);
+                numbers[x] = -99 + new Random().nextInt(199);
             }
             numbers[2] = numbers[0] / numbers[1];
         }
@@ -211,9 +211,9 @@ public class Math {
         if ( level == 4){
 
 
-            numbers[0] = -99 + new Random().nextInt(100);
+            numbers[0] = -99 + new Random().nextInt(199);
 
-            numbers[1] = -999 + new Random().nextInt(1000);
+            numbers[1] = -999 + new Random().nextInt(1999);
             numbers[2] = numbers[0] / numbers[1];
         }
 
@@ -221,7 +221,7 @@ public class Math {
 
             for (int x = 0; x < 2; x++){
 
-                numbers[x] = -999 + new Random().nextInt(1000);
+                numbers[x] = -999 + new Random().nextInt(1999);
             }
             numbers[2] = numbers[0] / numbers[1];
         }

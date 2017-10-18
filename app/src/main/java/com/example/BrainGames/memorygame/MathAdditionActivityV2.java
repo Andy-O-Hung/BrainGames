@@ -12,7 +12,7 @@ import android.widget.TextView;
 public class MathAdditionActivityV2 extends AppCompatActivity {
     private static Button checkButton;
     private TextView displayAddition;
-    private String userInput;
+    private int userInput;
     private EditText addInput;
     private Math math;
     private int[] results;
@@ -39,8 +39,13 @@ public class MathAdditionActivityV2 extends AppCompatActivity {
     }
 
     private void checkAnswer(){
-        userInput = String.valueOf(addInput.getText());
-        displayAddition.setText(userInput);
+        userInput = Integer.valueOf(String.valueOf(addInput.getText()));
+        if(results[2] == userInput){
+            displayAddition.setText("CORRECT");
+        }
+        else{
+            displayAddition.setText("WRONG");
+        }
 
     }
     public void OnClickCheckButtonListener(){
