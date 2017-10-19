@@ -20,7 +20,11 @@
         <activity android:name=".MathActivity" />
         <activity android:name=".MathAdditionActivityV2" />
         <activity android:name=".MathSubtractActivity" />
-        <activity android:name=".MemoryActivity"></activity>
+        <activity android:name=".MemoryActivity" />
+        <activity
+            android:name=".MathMultiplicationActivity"
+            android:label="@string/title_activity_math_multiplication"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

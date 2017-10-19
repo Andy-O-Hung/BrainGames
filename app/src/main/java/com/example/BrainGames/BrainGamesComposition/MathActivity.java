@@ -58,4 +58,17 @@ public class MathActivity extends AppCompatActivity {
                 }
         );
     }
+
+    public void onClickMathMultiplicationButtonListener(){
+        multiplicationButton = (Button)findViewById(R.id.multiplicationActivityButton);
+        multiplicationButton.setOnClickListener(
+                new View.OnClickListener(){
+                    @Override
+                    public void onClick(View v){
+                        Intent mathMultiplicationActivity = new Intent(MathActivity.this, MathMultiplicationActivity.class);
+                        startActivity(mathMultiplicationActivity);
+                    }
+                }
+        );
+    }
 }
