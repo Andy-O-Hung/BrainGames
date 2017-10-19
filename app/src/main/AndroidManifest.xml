@@ -9,17 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.example.BrainGames.BrainGamesComposition.MainActivity">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.BrainGames.BrainGamesComposition.ColorMemoryGame" />
-        <activity android:name="com.example.BrainGames.BrainGamesComposition.MathActivity" />
-        <activity android:name="com.example.BrainGames.BrainGamesComposition.MathAdditionActivityV2" />
-        <activity android:name="com.example.BrainGames.BrainGamesComposition.MathSubtractActivity"></activity>
+        <activity android:name=".ColorMemoryGame" />
+        <activity android:name=".MathActivity" />
+        <activity android:name=".MathAdditionActivityV2" />
+        <activity android:name=".MathSubtractActivity" />
+        <activity android:name=".MemoryActivity"></activity>
     </application>
 
 </manifest>

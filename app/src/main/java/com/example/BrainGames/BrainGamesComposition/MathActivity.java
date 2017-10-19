@@ -6,7 +6,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
-
+/**
+ * The class that will change to other math games.
+ */
 public class MathActivity extends AppCompatActivity {
 
     private static Button additionButton;
@@ -25,6 +27,9 @@ public class MathActivity extends AppCompatActivity {
         onClickMathSubtractionButtonListener();
     }
 
+    /**
+     * Action listener to change activity to the addition game.
+     */
     public void onClickMathAdditionButtonListener(){
         additionButton = (Button)findViewById(R.id.additionActivityButton);
         additionButton.setOnClickListener(
@@ -37,6 +42,10 @@ public class MathActivity extends AppCompatActivity {
                 }
         );
     }
+
+    /**
+     * Action listener to change activity to the subtraction game.
+     */
     public void onClickMathSubtractionButtonListener(){
         subtractionButton = (Button)findViewById(R.id.subtractionActivityButton);
         subtractionButton.setOnClickListener(

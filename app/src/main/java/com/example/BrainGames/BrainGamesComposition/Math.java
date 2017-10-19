@@ -8,25 +8,36 @@ import java.util.Random;
 
 public class Math {
 
-
+    /** Initialize the level */
     private int level;
 
-
+    /** Initialize the numbers */
     private int[] numbers;
 
-
+    /**
+     * Math Constructor that will generate the question
+     * based on the level.
+     * @param level the difficulty of the question.
+     */
     public Math(int level){
 
         this.level = level;
     }
 
+    /**
+     * Get the math objects numbers and answer.
+     * @return returns a copy of the math objects numbers
+     */
     public int[] getNumbers(){
         int[] tempNumbers = numbers;
         return tempNumbers;
     }
 
+    /**
+     * Generates addition questions.
+     */
     public void generateSum() {
-        //private Random rand = new Random();
+
         numbers = new int[3];
         if ( level == 1){
 
@@ -50,7 +61,7 @@ public class Math {
 
             for (int x = 0; x < 2; x++){
 
-                numbers[x] = -99 + new Random().nextInt(100);
+                numbers[x] = -99 + new Random().nextInt(199);
             }
             numbers[2] = numbers[0] + numbers[1];
         }
@@ -76,8 +87,11 @@ public class Math {
 
     }
 
+    /**
+     * Generates subtraction questions.
+     */
     public void generateSub() {
-        //private Random rand = new Random();
+
         numbers = new int[3];
         if ( level == 1){
 
@@ -127,8 +141,11 @@ public class Math {
 
     }
 
+    /**
+     * Generates multiplication questions.
+     */
     public void generateMul() {
-        //private Random rand = new Random();
+
         numbers = new int[3];
         if ( level == 1){
 
@@ -178,8 +195,11 @@ public class Math {
 
     }
 
+    /**
+     * Generates division questions.
+     */
     public void generateDiv() {
-        //private Random rand = new Random();
+
         numbers = new int[3];
         if ( level == 1){
 

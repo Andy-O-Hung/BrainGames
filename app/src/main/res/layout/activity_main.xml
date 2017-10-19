@@ -14,7 +14,7 @@
         android:id="@+id/button_4x4_game"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Color Memory Game"
+        android:text="Memory Games"
         tools:layout_constraintTop_creator="1"
         tools:layout_constraintRight_creator="1"
         tools:layout_constraintBottom_creator="1"
@@ -28,12 +28,12 @@
         android:id="@+id/mathButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
+        android:layout_marginStart="8dp"
         android:text="Math Games"
         tools:layout_constraintBottom_creator="1"
         app:layout_constraintBottom_toTopOf="@+id/button_4x4_game"
         tools:layout_constraintLeft_creator="1"
-        android:layout_marginBottom="65dp"
+        android:layout_marginBottom="47dp"
         app:layout_constraintLeft_toLeftOf="@+id/button_4x4_game" />
 
 </android.support.constraint.ConstraintLayout>
