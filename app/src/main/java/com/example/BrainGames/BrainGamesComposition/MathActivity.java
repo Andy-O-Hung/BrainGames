@@ -34,6 +34,7 @@ public class MathActivity extends AppCompatActivity {
         setContentView(R.layout.activity_math);
         onClickMathAdditionButtonListener();
         onClickMathSubtractionButtonListener();
+        onClickMathMultiplicationButtonListener();
     }
 
     /**

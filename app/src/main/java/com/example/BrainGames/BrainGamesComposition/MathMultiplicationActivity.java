@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 
 /**
- * This is the class that will run the addition game.
+ * This is the class that will run the multiplication game.
  */
 public class MathMultiplicationActivity extends AppCompatActivity {
 
@@ -23,7 +23,7 @@ public class MathMultiplicationActivity extends AppCompatActivity {
     private int userInput;
 
     /** Initialize the input object */
-    private EditText addInput;
+    private EditText mulInput;
 
     /** Initialize the math object */
     private Math math;
@@ -50,16 +50,16 @@ public class MathMultiplicationActivity extends AppCompatActivity {
     private int wrong = 0;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_math_addition_v2);
+        setContentView(R.layout.activity_math_multiplication);
 
         //Initialize what the texts display
-        displayMultiplication = (TextView)findViewById(R.id.displayMultiplicationQuestion);
+        displayMultiplication = (TextView) findViewById(R.id.displayMultiplicationQuestion);
         generateMultiplication();
         displayMultiplication.setText(results[0] + " + " + results[1] + " =  ?");
-        addInput = (EditText) findViewById(R.id.multiplicationInput);
-        addInput.setText("");
+        mulInput = (EditText) findViewById(R.id.multiplicationInput);
+        mulInput.setText("");
         multiplicationDisplayCorrect = (TextView) findViewById(R.id.multiplicationDisplayCorrectActivity);
         multiplicationDisplayCorrect.setText("Correct: " + String.valueOf(correct));
         multiplicationDisplayWrong = (TextView) findViewById(R.id.multiplicationDisplayWrongActivity);
@@ -68,7 +68,7 @@ public class MathMultiplicationActivity extends AppCompatActivity {
     }
 
     /**
-     * This will generate a new addition question.
+     * This will generate a new multiplication question.
      */
     public void generateMultiplication(){
         math = new Math(level);
@@ -86,7 +86,7 @@ public class MathMultiplicationActivity extends AppCompatActivity {
         final android.os.Handler handler = new android.os.Handler();
         try
         {
-            userInput = Integer.valueOf(String.valueOf(addInput.getText()));
+            userInput = Integer.valueOf(String.valueOf(mulInput.getText()));
         } catch (NumberFormatException ex)
         {
             displayMultiplication.setText("ENTER A INTEGER!");
@@ -144,7 +144,7 @@ public class MathMultiplicationActivity extends AppCompatActivity {
 
         generateMultiplication();
         displayMultiplication.setText(results[0] + " + " + results[1] + " =  ?");
-        addInput.setText("");
+        mulInput.setText("");
     }
 
     /**
@@ -152,7 +152,7 @@ public class MathMultiplicationActivity extends AppCompatActivity {
      * that will run through the check.
      */
     public void OnClickCheckButtonListener(){
-        checkButton = (Button) findViewById(R.id.checkButtonActivity);
+        checkButton = (Button) findViewById(R.id.checkMulAnswerButton);
         checkButton.setText("Check");
         checkButton.setOnClickListener(
                 new View.OnClickListener() {
