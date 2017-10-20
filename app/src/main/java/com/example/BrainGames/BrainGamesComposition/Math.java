@@ -3,9 +3,8 @@ package com.example.BrainGames.BrainGamesComposition;
 import java.util.Random;
 
 /**
- * Created by Andy Hung on 10/15/2017.
+ * The math class, math model for our math games.
  */
-
 public class Math {
 
     /** Initialize the level. */
