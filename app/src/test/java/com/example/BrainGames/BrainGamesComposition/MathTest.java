@@ -5,9 +5,14 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- * Created by Andy Hung on 10/17/2017.
+ * Test case for our math model.
  */
 public class MathTest {
+
+    /**
+     * Tests if getting the numbers array works.
+     * @throws Exception
+     */
     @Test
     public void getNumbers() throws Exception {
         Math mathObject = new Math(1);
@@ -20,6 +25,11 @@ public class MathTest {
         assertEquals(answer, first + second);
     }
 
+    /**
+     * Tests if generating a level one addition question
+     * works.
+     * @throws Exception
+     */
     @Test
     public void generateSumLevelOne() throws Exception {
         Math mathObject = new Math(1);
@@ -31,6 +41,11 @@ public class MathTest {
         assertEquals(answer, first + second);
     }
 
+    /**
+     * Tests if generating a level two addition question
+     * works.
+     * @throws Exception
+     */
     @Test
     public void generateSumLevelTwo() throws Exception {
         Math mathObject = new Math(2);
@@ -42,6 +57,11 @@ public class MathTest {
         assertEquals(answer, first + second);
     }
 
+    /**
+     * Tests if generating a level three addition question
+     * works.
+     * @throws Exception
+     */
     @Test
     public void generateSumLevelThree() throws Exception {
         Math mathObject = new Math(3);
@@ -53,6 +73,11 @@ public class MathTest {
         assertEquals(answer, first + second);
     }
 
+    /**
+     * Tests if generating a level four addition question
+     * works.
+     * @throws Exception
+     */
     @Test
     public void generateSumLevelFour() throws Exception {
         Math mathObject = new Math(4);
@@ -64,6 +89,11 @@ public class MathTest {
         assertEquals(answer, first + second);
     }
 
+    /**
+     * Tests if generating a level five addition question
+     * works.
+     * @throws Exception
+     */
     @Test
     public void generateSumLevelFive() throws Exception {
         Math mathObject = new Math(5);
@@ -75,6 +105,11 @@ public class MathTest {
         assertEquals(answer, first + second);
     }
 
+    /**
+     * Tests if generating a level one subtraction question
+     * works.
+     * @throws Exception
+     */
     @Test
     public void generateSubLevelOne() throws Exception {
 
@@ -87,6 +122,11 @@ public class MathTest {
         assertEquals(answer, first - second);
     }
 
+    /**
+     * Tests if generating a level two subtraction question
+     * works.
+     * @throws Exception
+     */
     @Test
     public void generateSubLevelTwo() throws Exception {
 
@@ -99,6 +139,11 @@ public class MathTest {
         assertEquals(answer, first - second);
     }
 
+    /**
+     * Tests if generating a level three subtraction question
+     * works.
+     * @throws Exception
+     */
     @Test
     public void generateSubLevelThree() throws Exception {
 
@@ -111,6 +156,11 @@ public class MathTest {
         assertEquals(answer, first - second);
     }
 
+    /**
+     * Tests if generating a level four subtraction question
+     * works.
+     * @throws Exception
+     */
     @Test
     public void generateSubLevelFour() throws Exception {
 
@@ -123,6 +173,11 @@ public class MathTest {
         assertEquals(answer, first - second);
     }
 
+    /**
+     * Tests if generating a level five subtraction question
+     * works.
+     * @throws Exception
+     */
     @Test
     public void generateSubLevelFive() throws Exception {
 
@@ -135,6 +190,11 @@ public class MathTest {
         assertEquals(answer, first - second);
     }
 
+    /**
+     * Tests if generating a level one multiplication question
+     * works.
+     * @throws Exception
+     */
     @Test
     public void generateMulLevelOne() throws Exception {
         Math mathObject = new Math(1);
@@ -146,6 +206,11 @@ public class MathTest {
         assertEquals(answer, first * second);
     }
 
+    /**
+     * Tests if generating a level two multiplication question
+     * works.
+     * @throws Exception
+     */
     @Test
     public void generateMulLevelTwo() throws Exception {
         Math mathObject = new Math(2);
@@ -157,6 +222,11 @@ public class MathTest {
         assertEquals(answer, first * second);
     }
 
+    /**
+     * Tests if generating a level three multiplication question
+     * works.
+     * @throws Exception
+     */
     @Test
     public void generateMulLevelThree() throws Exception {
         Math mathObject = new Math(3);
@@ -168,6 +238,11 @@ public class MathTest {
         assertEquals(answer, first * second);
     }
 
+    /**
+     * Tests if generating a level four multiplication question
+     * works.
+     * @throws Exception
+     */
     @Test
     public void generateMulLevelFour() throws Exception {
         Math mathObject = new Math(4);
@@ -179,6 +254,11 @@ public class MathTest {
         assertEquals(answer, first * second);
     }
 
+    /**
+     * Tests if generating a level five multiplication question
+     * works.
+     * @throws Exception
+     */
     @Test
     public void generateMulLevelFive() throws Exception {
         Math mathObject = new Math(5);
@@ -190,6 +270,11 @@ public class MathTest {
         assertEquals(answer, first * second);
     }
 
+    /**
+     * Tests if generating a level one division question
+     * works.
+     * @throws Exception
+     */
     @Test
     public void generateDivLevelOne() throws Exception {
         Math mathObject = new Math(1);
@@ -201,6 +286,11 @@ public class MathTest {
         assertEquals(answer, first / second);
     }
 
+    /**
+     * Tests if generating a level two division question
+     * works.
+     * @throws Exception
+     */
     @Test
     public void generateDivLevelTwo() throws Exception {
         Math mathObject = new Math(2);
@@ -212,6 +302,11 @@ public class MathTest {
         assertEquals(answer, first / second);
     }
 
+    /**
+     * Tests if generating a level three division question
+     * works.
+     * @throws Exception
+     */
     @Test
     public void generateDivLevelThree() throws Exception {
         Math mathObject = new Math(3);
@@ -223,6 +318,11 @@ public class MathTest {
         assertEquals(answer, first / second);
     }
 
+    /**
+     * Tests if generating a level four division question
+     * works.
+     * @throws Exception
+     */
     @Test
     public void generateDivLevelFour() throws Exception {
         Math mathObject = new Math(4);
@@ -234,6 +334,11 @@ public class MathTest {
         assertEquals(answer, first / second);
     }
 
+    /**
+     * Tests if generating a level five division question
+     * works.
+     * @throws Exception
+     */
     @Test
     public void generateDivLevelFive() throws Exception {
         Math mathObject = new Math(5);
