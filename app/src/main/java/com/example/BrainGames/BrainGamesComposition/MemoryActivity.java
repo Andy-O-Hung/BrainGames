@@ -13,7 +13,7 @@ import android.widget.Button;
 public class MemoryActivity extends AppCompatActivity {
 
     /** Initialize our color game button. */
-    private static Button colorMemoryActivity;
+    private Button colorMemoryActivity;
 
     /**
      * Initializes all the components of our color memory

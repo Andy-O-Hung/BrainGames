@@ -12,10 +12,10 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity {
 
     /** Intialize the the memory games button. */
-    private static Button memoryButton;
+    private Button memoryButton;
 
     /** Intialize the the memory games button. */
-    private static Button mathButton;
+    private Button mathButton;
 
     /**
      * Initializes all the components of our color memory

@@ -14,7 +14,7 @@ import android.widget.TextView;
 public class MathMultiplicationActivity extends AppCompatActivity {
 
     /** Initialize the check button */
-    private static Button checkButton;
+    private Button checkButton;
 
     /** Initialize  */
     private TextView displayMultiplication;
@@ -57,14 +57,14 @@ public class MathMultiplicationActivity extends AppCompatActivity {
         //Initialize what the texts display
         displayMultiplication = (TextView) findViewById(R.id.displayMultiplicationQuestion);
         generateMultiplication();
-        displayMultiplication.setText(results[0] + " + " + results[1] + " =  ?");
+        displayMultiplication.setText(results[0] + " * " + results[1] + " =  ?");
         mulInput = (EditText) findViewById(R.id.multiplicationInput);
         mulInput.setText("");
         multiplicationDisplayCorrect = (TextView) findViewById(R.id.multiplicationDisplayCorrectActivity);
         multiplicationDisplayCorrect.setText("Correct: " + String.valueOf(correct));
         multiplicationDisplayWrong = (TextView) findViewById(R.id.multiplicationDisplayWrongActivity);
         multiplicationDisplayWrong.setText("Wrong: " + String.valueOf(wrong));
-        OnClickCheckButtonListener();
+        onClickCheckButtonListener();
     }
 
     /**
@@ -143,7 +143,7 @@ public class MathMultiplicationActivity extends AppCompatActivity {
         }
 
         generateMultiplication();
-        displayMultiplication.setText(results[0] + " + " + results[1] + " =  ?");
+        displayMultiplication.setText(results[0] + " * " + results[1] + " =  ?");
         mulInput.setText("");
     }
 
@@ -151,7 +151,7 @@ public class MathMultiplicationActivity extends AppCompatActivity {
      * Action Listener for our check button
      * that will run through the check.
      */
-    public void OnClickCheckButtonListener(){
+    public void onClickCheckButtonListener(){
         checkButton = (Button) findViewById(R.id.checkMulAnswerButton);
         checkButton.setText("Check");
         checkButton.setOnClickListener(

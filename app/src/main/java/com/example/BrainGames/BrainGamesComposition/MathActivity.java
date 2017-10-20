@@ -12,16 +12,16 @@ import android.widget.Button;
 public class MathActivity extends AppCompatActivity {
 
     /** Initialize the addition button. */
-    private static Button additionButton;
+    private Button additionButton;
 
     /** Initialize the subtraction button. */
-    private static Button subtractionButton;
+    private Button subtractionButton;
 
     /** Initialize the multiplication button. */
-    private static Button multiplicationButton;
+    private Button multiplicationButton;
 
     /** Initialize the division button. */
-    private static Button divisionButton;
+    private Button divisionButton;
 
     /**
      * Initializes all the components of our color memory

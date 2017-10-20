@@ -14,7 +14,7 @@ import android.widget.TextView;
 public class MathAdditionActivityV2 extends AppCompatActivity {
 
     /** Initialize the check button. */
-    private static Button checkButton;
+    private Button checkButton;
 
     /** Initialize the TextView object first displaying the question. */
     private TextView displayAddition;

@@ -13,7 +13,7 @@ import android.widget.TextView;
 public class MathSubtractActivity extends AppCompatActivity {
 
     /** Initialize the check button object. */
-    private static Button checkButton;
+    private Button checkButton;
 
     /** Initialize the TextView object for
      * displaying the question. */
