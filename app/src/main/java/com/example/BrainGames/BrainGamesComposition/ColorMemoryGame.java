@@ -173,7 +173,7 @@ public class ColorMemoryGame extends AppCompatActivity implements View.OnClickLi
      * @param view the contents of the activity
      */
     @Override
-    public void onClick(View view) {
+    public void onClick(final View view) {
         checkClear();
         Log.d("?", "clicked");
 
