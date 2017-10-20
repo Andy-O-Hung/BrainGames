@@ -13,27 +13,27 @@ import android.widget.GridLayout;
  * Class for our custom memory button. Extends to widget which we get our
  * attributes from.
  */
-
 public class MemoryButton extends android.support.v7.widget.AppCompatButton {
-    /** Initialize row */
+
+    /** Initialize row. */
     private int row;
 
-    /** Initialize column*/
+    /** Initialize column. */
     private int col;
 
-    /** Initialize the ID from activity*/
+    /** Initialize the ID from activity. */
     private int frontDrawableId;
 
-    /** Initialize the flipped state*/
-    protected boolean isFlipped = false;
+    /** Initialize the flipped state. */
+    private boolean isFlipped = false;
 
-    /** Initialize the matched state*/
+    /** Initialize the matched state. */
     private boolean isMatched = false;
 
-    /** Initialize the front*/
+    /** Initialize the front. */
     private Drawable front;
 
-    /** Initialize  the back*/
+    /** Initialize  the back. */
     private Drawable back;
 
 
@@ -44,7 +44,7 @@ public class MemoryButton extends android.support.v7.widget.AppCompatButton {
      * @param c the column which this button will be "located."
      * @param frontImageDrawAbleId Connects this button to the ID from the activity.
      */
-    public MemoryButton(Context context, int r, int c, int frontImageDrawAbleId){
+    public MemoryButton(final Context context, final int r, final int c, final int frontImageDrawAbleId) {
 
         //Must pass our resources from activity
         super(context);
@@ -83,9 +83,9 @@ public class MemoryButton extends android.support.v7.widget.AppCompatButton {
 
     /**
      * Setter for if the button is matched.
-     * @param matched
+     * @param matched matched state.
      */
-    public void setMatched(boolean matched) {
+    public void setMatched(final boolean matched) {
         isMatched = matched;
     }
 
@@ -98,30 +98,37 @@ public class MemoryButton extends android.support.v7.widget.AppCompatButton {
         return frontDrawableId;
     }
 
-    /**
-     * Sets the front drawable ID.
-     * @param frontDrawableId the drawable ID that will be
-     *                        used.
-     */
-    public void setFrontDrawableId(int frontDrawableId) {
-        this.frontDrawableId = frontDrawableId;
-    }
+//    /**
+//     * Sets the front drawable ID.
+//     * @param frontDrawableId the drawable ID that will be
+//     *                        used.
+//     */
+//    public void setFrontDrawableId (final int frontDrawableId) {
+//        this.frontDrawableId = frontDrawableId;
+//    }
 
     /**
      * Flip the object around.
      */
-    public void flip(){
-        if(isMatched){
+    public void flip() {
+        if (isMatched) {
             return;
         }
-        if(isFlipped){
+        if (isFlipped) {
             setBackground(back);
             isFlipped = false;
-        }
-
-        else{
+        } else {
             setBackground(front);
             isFlipped = true;
         }
+    }
+
+    /**
+     * Returns the boolean value of it
+     * is flupped.
+     * @return boolean value isFlipped.
+     */
+    public boolean isFlipped() {
+        return isFlipped;
     }
 }

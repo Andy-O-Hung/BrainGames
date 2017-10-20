@@ -11,16 +11,25 @@ import android.widget.Button;
  */
 public class MathActivity extends AppCompatActivity {
 
+    /** Initialize the addition button. */
     private static Button additionButton;
 
+    /** Initialize the subtraction button. */
     private static Button subtractionButton;
 
+    /** Initialize the multiplication button. */
     private static Button multiplicationButton;
 
+    /** Initialize the division button. */
     private static Button divisionButton;
 
+    /**
+     * Initializes all the components of our color memory
+     * game activity.
+     * @param savedInstanceState Android save instance.
+     */
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_math);
         onClickMathAdditionButtonListener();
@@ -30,12 +39,12 @@ public class MathActivity extends AppCompatActivity {
     /**
      * Action listener to change activity to the addition game.
      */
-    public void onClickMathAdditionButtonListener(){
-        additionButton = (Button)findViewById(R.id.additionActivityButton);
+    public void onClickMathAdditionButtonListener() {
+        additionButton = (Button) findViewById(R.id.additionActivityButton);
         additionButton.setOnClickListener(
-                new View.OnClickListener(){
+                new View.OnClickListener() {
                     @Override
-                    public void onClick(View v){
+                    public void onClick(final View v) {
                         Intent mathAdditionActivity = new Intent(MathActivity.this, MathAdditionActivityV2.class);
                         startActivity(mathAdditionActivity);
                     }
@@ -46,12 +55,12 @@ public class MathActivity extends AppCompatActivity {
     /**
      * Action listener to change activity to the subtraction game.
      */
-    public void onClickMathSubtractionButtonListener(){
-        subtractionButton = (Button)findViewById(R.id.subtractionActivityButton);
+    public void onClickMathSubtractionButtonListener() {
+        subtractionButton = (Button) findViewById(R.id.subtractionActivityButton);
         subtractionButton.setOnClickListener(
-                new View.OnClickListener(){
+                new View.OnClickListener() {
                     @Override
-                    public void onClick(View v){
+                    public void onClick(final View v) {
                         Intent mathSubtractionActivity = new Intent(MathActivity.this, MathSubtractActivity.class);
                         startActivity(mathSubtractionActivity);
                     }
@@ -59,12 +68,16 @@ public class MathActivity extends AppCompatActivity {
         );
     }
 
-    public void onClickMathMultiplicationButtonListener(){
-        multiplicationButton = (Button)findViewById(R.id.multiplicationActivityButton);
+    /**
+     * Action listener to for multiplication button
+     * to change activity to multiplication.
+     */
+    public void onClickMathMultiplicationButtonListener() {
+        multiplicationButton = (Button) findViewById(R.id.multiplicationActivityButton);
         multiplicationButton.setOnClickListener(
-                new View.OnClickListener(){
+                new View.OnClickListener() {
                     @Override
-                    public void onClick(View v){
+                    public void onClick(final View v) {
                         Intent mathMultiplicationActivity = new Intent(MathActivity.this, MathMultiplicationActivity.class);
                         startActivity(mathMultiplicationActivity);
                     }

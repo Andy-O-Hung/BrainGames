@@ -13,38 +13,45 @@ import java.util.Random;
  * The activity of our 4x4 memory game with colors.
  * To win, find all pairs.
  */
-public class ColorMemoryGame extends AppCompatActivity implements View.OnClickListener{
+public class ColorMemoryGame extends AppCompatActivity implements View.OnClickListener {
 
-    /** Initialize the number of elements */
+    /** Initialize the number of elements. */
     private int numberOfElements;
 
-    /** Initialize our array of buttons */
+    /** Initialize our array of buttons. */
     private MemoryButton[] buttons;
 
-    /** Initialize the locations of our buttons */
+    /** Initialize the locations of our buttons. */
     private int[] buttonGraphicLocations;
 
-    /** Initialize the buttons images */
+    /** Initialize the buttons images. */
     private int[] buttonGraphics;
 
-    /** Initialize the selected button object */
+    /** Initialize the selected button object. */
     private MemoryButton selectedButton1;
 
-    /** Initialize the second selected button object */
+    /** Initialize the second selected button object. */
     private MemoryButton selectedButton2;
 
-    /** Initialize the state of the activity */
+    /** Initialize the state of the activity. */
     private boolean isBusy = false;
 
-    /** Display state of game */
+    /** Display state of game. */
     private TextView state;
 
-    /** Display amount of clicks */
+    /** Display amount of clicks. */
     private TextView clickCounter;
 
+    /** Initialize the amount of clicks to 0. */
     private int clicks = 0;
+
+    /**
+     * Initializes all the components of our color memory
+     * game activity.
+     * @param savedInstanceState Android save instance.
+     */
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game4x4color);
         state = (TextView) findViewById(R.id.colorStateActivity);
@@ -77,9 +84,9 @@ public class ColorMemoryGame extends AppCompatActivity implements View.OnClickLi
         shuffleButtonGraphics();
 
         //Create our memory buttons and connect them to gridlayout.
-        for( int r = 0; r < numRows; r++) {
-            for( int c = 0; c < numColumns; c++) {
-                MemoryButton tempButton = new MemoryButton(this,r , c, buttonGraphics[buttonGraphicLocations[r * numColumns + c]]);
+        for (int r = 0; r < numRows; r++) {
+            for (int c = 0; c < numColumns; c++) {
+                MemoryButton tempButton = new MemoryButton(this, r, c, buttonGraphics[buttonGraphicLocations[r * numColumns + c]]);
                 tempButton.setId(View.generateViewId());
                 tempButton.setOnClickListener(this);
                 buttons[r * numColumns + c] = tempButton;
@@ -92,7 +99,7 @@ public class ColorMemoryGame extends AppCompatActivity implements View.OnClickLi
     /**
      * Set the images to the buttons.
      */
-    private void setButtonGraphics(){
+    private void setButtonGraphics() {
         buttonGraphics[0] = R.drawable.red;
         buttonGraphics[1] = R.drawable.blue;
         buttonGraphics[2] = R.drawable.green;
@@ -105,13 +112,13 @@ public class ColorMemoryGame extends AppCompatActivity implements View.OnClickLi
     /**
      * Shuffles the images/graphics for our game.
      */
-    protected void shuffleButtonGraphics(){
+    protected void shuffleButtonGraphics() {
         Random rand = new Random();
 
-        for( int i = 0; i < numberOfElements; i++) {
+        for (int i = 0; i < numberOfElements; i++) {
             buttonGraphicLocations[i] = i % (numberOfElements / 2);
         }
-        for( int i = 0; i < numberOfElements; i++) {
+        for (int i = 0; i < numberOfElements; i++) {
             int temp = buttonGraphicLocations[i];
 
             int swapIndex = rand.nextInt(16);
@@ -125,18 +132,18 @@ public class ColorMemoryGame extends AppCompatActivity implements View.OnClickLi
     /**
      * Check if the game is complete.
      */
-    protected void checkClear(){
+    protected void checkClear() {
 
         int check = 0;
         int numElementsCheck = numberOfElements - 1;
-        for( int i = 0; i < numberOfElements; i++) {
-            if( buttons[i].isFlipped) {
+        for (int i = 0; i < numberOfElements; i++) {
+            if (buttons[i].isFlipped()) {
                 check++;
                 //Log.d("Flipped?", "button is flipped?");
             }
         }
 
-        if( check == numElementsCheck) {
+        if (check == numElementsCheck) {
             final android.os.Handler handler = new android.os.Handler();
             state.setText("DONE!");
             //Not working why?
@@ -152,7 +159,12 @@ public class ColorMemoryGame extends AppCompatActivity implements View.OnClickLi
         }
     }
 
-    public void clicks(){
+    /**
+     * Increases the click counter and
+     * set the value to the click counter
+     * so the user can see how many clicks.
+     */
+    public void clicks() {
         clicks++;
         clickCounter.setText(String.valueOf(clicks));
     }
@@ -166,18 +178,18 @@ public class ColorMemoryGame extends AppCompatActivity implements View.OnClickLi
         Log.d("?", "clicked");
 
         //So it doesn't crash.
-        if( isBusy) {
+        if (isBusy) {
             return;
         }
         MemoryButton button = (MemoryButton) view;
 
         //If matched,
-        if( button.isMatched()) {
+        if (button.isMatched()) {
             return;
         }
 
         //Set first button if null.
-        if( selectedButton1 == null) {
+        if (selectedButton1 == null) {
             selectedButton1 = button;
             selectedButton1.flip();
             clicks();
@@ -185,13 +197,13 @@ public class ColorMemoryGame extends AppCompatActivity implements View.OnClickLi
         }
 
 
-        if( selectedButton1.getId() == button.getId()) {
+        if (selectedButton1.getId() == button.getId()) {
             return;
         }
 
         //If two buttons are the same, flip, change variables
         //and reset.
-        if( selectedButton1.getFrontDrawableId() == button.getFrontDrawableId()) {
+        if (selectedButton1.getFrontDrawableId() == button.getFrontDrawableId()) {
             button.flip();
             button.setMatched(true);
             selectedButton1.setMatched(true);
@@ -202,10 +214,7 @@ public class ColorMemoryGame extends AppCompatActivity implements View.OnClickLi
             selectedButton1 = null;
 
             clicks();
-        }
-
-        //If not the same, let the user see then reset.
-        else{
+        } else { //If not the same, let the user see then reset.
             selectedButton2 = button;
             selectedButton2.flip();
             isBusy = true;
