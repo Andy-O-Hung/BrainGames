@@ -90,7 +90,7 @@ public class MathAdditionActivityV2 extends AppCompatActivity {
         //user knows correct or wrong.
         final android.os.Handler handler = new android.os.Handler();
         try {
-            userInput = Integer.valueOf(String.valueOf(addInput.getText()));
+            userInput = Integer.parseInt(String.valueOf(addInput.getText()));
         } catch (NumberFormatException ex) {
             displayAddition.setText("ENTER A INTEGER!");
             handler.postDelayed(new Runnable() {

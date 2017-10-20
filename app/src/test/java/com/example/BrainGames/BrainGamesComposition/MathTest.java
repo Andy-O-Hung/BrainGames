@@ -170,7 +170,7 @@ public class MathTest {
 
     @Test
     public void generateMulLevelFour() throws Exception {
-        Math mathObject = new Math(3);
+        Math mathObject = new Math(4);
         mathObject.generateMul();
         int[] results = mathObject.getNumbers();
         int first = results[0];
@@ -181,7 +181,7 @@ public class MathTest {
 
     @Test
     public void generateMulLevelFive() throws Exception {
-        Math mathObject = new Math(3);
+        Math mathObject = new Math(5);
         mathObject.generateMul();
         int[] results = mathObject.getNumbers();
         int first = results[0];

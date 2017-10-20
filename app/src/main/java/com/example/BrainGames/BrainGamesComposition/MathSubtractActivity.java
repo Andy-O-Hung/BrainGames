@@ -111,7 +111,7 @@ public class MathSubtractActivity extends AppCompatActivity {
         //user knows correct or wrong.
         final android.os.Handler handler = new android.os.Handler();
         try {
-            userInput = Integer.valueOf(String.valueOf(subInput.getText()));
+            userInput = Integer.parseInt(String.valueOf(subInput.getText()));
         } catch (NumberFormatException ex) {
             displaySubtraction.setText("ENTER A INTEGER!");
             handler.postDelayed(new Runnable() {
