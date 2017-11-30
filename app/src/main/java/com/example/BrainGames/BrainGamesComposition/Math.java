@@ -200,51 +200,73 @@ public class Math {
     public void generateDiv() {
 
         numbers = new int[3];
+        boolean isDivisible = false;
+
         if (level == 1) {
 
-            for (int x = 0; x < 2; x++) {
-
-                numbers[x] = -9 + new Random().nextInt(19);
+            while(!isDivisible){
+                for (int x = 0; x < 2; x++) {
+                    numbers[x] = -9 + new Random().nextInt(19);
+                }
+                if(numbers[0] % numbers[1] == 0){
+                    isDivisible = true;
+                }
             }
             numbers[2] = numbers[0] / numbers[1];
         }
 
         if (level == 2) {
 
+            while(!isDivisible){
+                numbers[0] = -9 + new Random().nextInt(19);
+                numbers[1] = -99 + new Random().nextInt(199);
 
-            numbers[0] = -9 + new Random().nextInt(19);
-
-            numbers[1] = -99 + new Random().nextInt(199);
+                if(numbers[0] % numbers[1] == 0){
+                    isDivisible = true;
+                }
+            }
             numbers[2] = numbers[0] / numbers[1];
         }
 
         if (level == 3) {
 
-            for (int x = 0; x < 2; x++) {
+            while(!isDivisible){
+                for (int x = 0; x < 2; x++) {
+                    numbers[x] = -99 + new Random().nextInt(199);
+                }
 
-                numbers[x] = -99 + new Random().nextInt(199);
+                if(numbers[0] % numbers[1] == 0){
+                    isDivisible = true;
+                }
             }
             numbers[2] = numbers[0] / numbers[1];
+
         }
 
         if (level == 4) {
 
+            while(!isDivisible){
+                numbers[0] = -99 + new Random().nextInt(199);
+                numbers[1] = -999 + new Random().nextInt(1999);
 
-            numbers[0] = -99 + new Random().nextInt(199);
-
-            numbers[1] = -999 + new Random().nextInt(1999);
+                if(numbers[0] % numbers[1] == 0){
+                    isDivisible = true;
+                }
+            }
             numbers[2] = numbers[0] / numbers[1];
         }
 
         if (level >= 5) {
 
-            for (int x = 0; x < 2; x++) {
-
-                numbers[x] = -999 + new Random().nextInt(1999);
+            while(!isDivisible){
+                for (int x = 0; x < 2; x++) {
+                    numbers[x] = -999 + new Random().nextInt(1999);
+                }
+                if(numbers[0] % numbers[1] == 0){
+                    isDivisible = true;
+                }
             }
             numbers[2] = numbers[0] / numbers[1];
         }
-
-
     }
 }
