@@ -16,12 +16,11 @@
         android:layout_height="wrap_content"
         android:text="Memory Games"
         tools:layout_constraintTop_creator="1"
-        tools:layout_constraintRight_creator="1"
         tools:layout_constraintBottom_creator="1"
+        android:layout_marginStart="1dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
         tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintLeft_toLeftOf="@+id/reactionMainButtonActivity"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
@@ -35,5 +34,18 @@
         tools:layout_constraintLeft_creator="1"
         android:layout_marginBottom="47dp"
         app:layout_constraintLeft_toLeftOf="@+id/button_4x4_game" />
+
+    <Button
+        android:id="@+id/reactionMainButtonActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="REACTION GAME"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="73dp"
+        app:layout_constraintTop_toBottomOf="@+id/button_4x4_game"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

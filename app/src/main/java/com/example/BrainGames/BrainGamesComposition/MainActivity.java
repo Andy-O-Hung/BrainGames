@@ -17,6 +17,9 @@ public class MainActivity extends AppCompatActivity {
     /** Intialize the the memory games button. */
     private Button mathButton;
 
+    /** Intialize the the reaction game button. */
+    private Button reactionButton;
+
     /**
      * Initializes all the components of our color memory
      * game activity.
@@ -28,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         onClickMathButtonListener();
         onClick4x4ButtonListener();
-
+        onClickReactionButtonListener();
 
     }
 
@@ -64,4 +67,19 @@ public class MainActivity extends AppCompatActivity {
         );
     }
 
+    /**
+     * Change activity when reaction game is pressed.
+     */
+    public void onClickReactionButtonListener() {
+        reactionButton = (Button) findViewById(R.id.reactionMainButtonActivity);
+        reactionButton.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(final View v) {
+                        Intent reactionActivity = new Intent(MainActivity.this, ReactionActivity.class);
+                        startActivity(reactionActivity);
+                    }
+                }
+        );
+    }
 }
