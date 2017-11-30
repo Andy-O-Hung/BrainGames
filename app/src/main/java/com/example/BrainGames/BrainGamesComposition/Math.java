@@ -182,7 +182,7 @@ public class Math {
             numbers[2] = numbers[0] * numbers[1];
         }
 
-        if (level == 5) {
+        if (level >= 5) {
 
             for (int x = 0; x < 2; x++) {
 
@@ -236,7 +236,7 @@ public class Math {
             numbers[2] = numbers[0] / numbers[1];
         }
 
-        if (level == 5) {
+        if (level >= 5) {
 
             for (int x = 0; x < 2; x++) {
 
