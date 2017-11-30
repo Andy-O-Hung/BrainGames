@@ -25,12 +25,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Subtraction"
-        tools:layout_constraintRight_creator="1"
         tools:layout_constraintBottom_creator="1"
         app:layout_constraintBottom_toTopOf="@+id/multiplicationActivityButton"
-        android:layout_marginEnd="9dp"
-        app:layout_constraintRight_toRightOf="@+id/multiplicationActivityButton"
-        android:layout_marginBottom="22dp" />
+        android:layout_marginStart="9dp"
+        tools:layout_constraintLeft_creator="1"
+        android:layout_marginBottom="22dp"
+        app:layout_constraintLeft_toLeftOf="@+id/multiplicationActivityButton" />
 
     <Button
         android:id="@+id/multiplicationActivityButton"
@@ -44,4 +44,16 @@
         tools:layout_constraintLeft_creator="1"
         android:layout_marginBottom="216dp"
         app:layout_constraintLeft_toLeftOf="parent" />
+
+    <Button
+        android:id="@+id/divisionActivityButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="39dp"
+        android:text="DIVISION"
+        app:layout_constraintLeft_toLeftOf="@+id/multiplicationActivityButton"
+        app:layout_constraintTop_toBottomOf="@+id/multiplicationActivityButton"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintTop_creator="1" />
 </android.support.constraint.ConstraintLayout>

@@ -35,6 +35,7 @@ public class MathActivity extends AppCompatActivity {
         onClickMathAdditionButtonListener();
         onClickMathSubtractionButtonListener();
         onClickMathMultiplicationButtonListener();
+        onClickDivisionMultiplicationButtonListener();
     }
 
     /**
@@ -81,6 +82,19 @@ public class MathActivity extends AppCompatActivity {
                     public void onClick(final View v) {
                         Intent mathMultiplicationActivity = new Intent(MathActivity.this, MathMultiplicationActivity.class);
                         startActivity(mathMultiplicationActivity);
+                    }
+                }
+        );
+    }
+
+    public void onClickDivisionMultiplicationButtonListener() {
+        divisionButton = (Button) findViewById(R.id.divisionActivityButton);
+        divisionButton.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(final View v) {
+                        Intent mathDivisionActivity = new Intent(MathActivity.this, MathDivisionActivity.class);
+                        startActivity(mathDivisionActivity);
                     }
                 }
         );
