@@ -20,7 +20,7 @@ public class ReactionActivity extends AppCompatActivity {
 
     TextView textView ;
 
-    Button start, pause, reset, lap, testB ;
+    Button start, pause, reset, testB ;
 
     long MillisecondTime, StartTime, TimeBuff, UpdateTime = 0L ;
 
@@ -42,5 +42,79 @@ public class ReactionActivity extends AppCompatActivity {
         testB.setBackgroundColor(Color.RED);
         testB.setEnabled(false);
 
+        //starts the stopwatch
+//        start.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//                StartTime = SystemClock.uptimeMillis();
+//                handler.postDelayed(runnable, 0);
+//
+//                reset.setEnabled(false);
+//
+//            }
+//        });
+
+        //stops the stopwatch
+//        pause.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//                TimeBuff += MillisecondTime;
+//
+//                handler.removeCallbacks(runnable);
+//
+//                //reset.setEnabled(true);
+//
+//            }
+//        });
+
+        //resets the stopwatch
+//        reset.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//                MillisecondTime = 0L ;
+//                StartTime = 0L ;
+//                TimeBuff = 0L ;
+//                UpdateTime = 0L ;
+//                Seconds = 0 ;
+//                Minutes = 0 ;
+//                MilliSeconds = 0 ;
+//
+//                textView.setText("00:00:00");
+//
+//
+//            }
+//        });
+
+    //THIS BRACKET ENDS THE onCreate METHOD!!!!!!!!!!!!!!
     }
+
+    //This will be the run the stopwatch
+//    public Runnable runnable = new Runnable() {
+//
+//        public void run() {
+//
+//            MillisecondTime = SystemClock.uptimeMillis() - StartTime;
+//
+//            UpdateTime = TimeBuff + MillisecondTime;
+//
+//            Seconds = (int) (UpdateTime / 1000);
+//
+//            Minutes = Seconds / 60;
+//
+//            Seconds = Seconds % 60;
+//
+//            MilliSeconds = (int) (UpdateTime % 1000);
+//
+//            textView.setText("" + Minutes + ":"
+//                    + String.format("%02d", Seconds) + ":"
+//                    + String.format("%03d", MilliSeconds));
+//
+//            handler.postDelayed(this, 0);
+//        }
+//
+//    };
+
 }
