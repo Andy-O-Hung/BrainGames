@@ -17,8 +17,9 @@
         tools:layout_constraintBottom_creator="1"
         app:layout_constraintBottom_toTopOf="@+id/subtractionActivityButton"
         tools:layout_constraintLeft_creator="1"
-        android:layout_marginBottom="25dp"
-        app:layout_constraintLeft_toLeftOf="@+id/subtractionActivityButton" />
+        android:layout_marginBottom="16dp"
+        app:layout_constraintLeft_toLeftOf="@+id/subtractionActivityButton"
+        android:layout_marginLeft="72dp" />
 
     <Button
         android:id="@+id/subtractionActivityButton"
