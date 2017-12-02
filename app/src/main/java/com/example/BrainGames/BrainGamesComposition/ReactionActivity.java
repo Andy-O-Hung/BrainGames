@@ -1,26 +1,22 @@
 package com.example.BrainGames.BrainGamesComposition;
 
 import android.graphics.Color;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import  android.os.Bundle;
+import android.os.CountDownTimer;
 import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.os.Handler;
-import java.util.Arrays;
-import java.util.List;
-import java.util.ArrayList;
+
+import java.util.Random;
 
 public class ReactionActivity extends AppCompatActivity {
 
-    TextView textView ;
+    TextView stopWatchTextView;
 
-    Button start, pause, reset, testB ;
+    Button startButton, resetButton, reactionButton;
 
     long MillisecondTime, StartTime, TimeBuff, UpdateTime = 0L ;
 
@@ -38,83 +34,137 @@ public class ReactionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reaction);
 
-        testB = (Button) findViewById(R.id. reactionTestActivity);
-        testB.setBackgroundColor(Color.RED);
-        testB.setEnabled(false);
+        reactionButton = (Button) findViewById(R.id. reactionLayoutButton);
+        reactionButton.setBackgroundColor(Color.RED);
+        reactionButton.setEnabled(false);
 
-        //starts the stopwatch
-//        start.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//                StartTime = SystemClock.uptimeMillis();
-//                handler.postDelayed(runnable, 0);
-//
-//                reset.setEnabled(false);
-//
-//            }
-//        });
+        resetButton = (Button) findViewById(R.id. reactionResetLayoutButton);
 
-        //stops the stopwatch
-//        pause.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//                TimeBuff += MillisecondTime;
-//
-//                handler.removeCallbacks(runnable);
-//
-//                //reset.setEnabled(true);
-//
-//            }
-//        });
+        startButton = (Button) findViewById(R.id. reactionStartLayoutButton);
 
-        //resets the stopwatch
-//        reset.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//                MillisecondTime = 0L ;
-//                StartTime = 0L ;
-//                TimeBuff = 0L ;
-//                UpdateTime = 0L ;
-//                Seconds = 0 ;
-//                Minutes = 0 ;
-//                MilliSeconds = 0 ;
-//
-//                textView.setText("00:00:00");
-//
-//
-//            }
-//        });
+        stopWatchTextView = (TextView) findViewById(R.id. stopWatchTextViewLayout);
+        stopWatchTextView.setText("kappa");
+
+        handler = new Handler() ;
+
+        onClickReactionButtonListener();
+        onClickResetButtonListener();
+        onClickStartButtonListener();
+
+        resetButton.setEnabled(false);
+
 
     //THIS BRACKET ENDS THE onCreate METHOD!!!!!!!!!!!!!!
     }
 
+    public void onClickReactionButtonListener() {
+        reactionButton = (Button) findViewById(R.id.reactionLayoutButton);
+        reactionButton.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(final View view) {
+                        stopStopWatch();
+                        resetButton.setEnabled(true);
+
+                    }
+                }
+        );
+    }
+
+    public void onClickResetButtonListener() {
+        resetButton.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(final View view) {
+                        resetStopWatch();
+                        reactionButton.setEnabled(false);
+                        reactionButton.setBackgroundColor(Color.RED);
+                        startButton.setEnabled(true);
+                        resetButton.setEnabled(false);
+                    }
+                }
+        );
+    }
+
+    public void onClickStartButtonListener() {
+        startButton.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(final View view) {
+                        countDownTimer();
+                        startButton.setEnabled(false);
+                    }
+                }
+        );
+    }
+
+    public void countDownTimer(){
+        int randomTime = 1 + new Random().nextInt(4);
+        final CountDownTimer countDownTimer = new CountDownTimer(randomTime * 1000,1000) {
+            @Override
+            public void onTick(long millis) {
+                stopWatchTextView.setText("" + (int) (millis /1000));
+
+            }
+
+            @Override
+            public void onFinish() {
+                stopWatchTextView.setText("Finish");
+                reactionButton.setBackgroundColor(Color.GREEN);
+                reactionButton.setEnabled(true);
+                startStopWatch();
+            }
+        }.start();
+    }
+
+    public void stopStopWatch(){
+                TimeBuff += MillisecondTime;
+
+                handler.removeCallbacks(runnable);
+    }
+
+    public void startStopWatch(){
+                StartTime = SystemClock.uptimeMillis();
+                handler.postDelayed(runnable, 0);
+
+                //resetButton.setEnabled(false);
+    }
+
+    public void resetStopWatch(){
+                MillisecondTime = 0L ;
+                StartTime = 0L ;
+                TimeBuff = 0L ;
+                UpdateTime = 0L ;
+                Seconds = 0 ;
+                Minutes = 0 ;
+                MilliSeconds = 0 ;
+
+                stopWatchTextView.setText("00:00:00");
+    }
     //This will be the run the stopwatch
-//    public Runnable runnable = new Runnable() {
-//
-//        public void run() {
-//
-//            MillisecondTime = SystemClock.uptimeMillis() - StartTime;
-//
-//            UpdateTime = TimeBuff + MillisecondTime;
-//
-//            Seconds = (int) (UpdateTime / 1000);
-//
-//            Minutes = Seconds / 60;
-//
-//            Seconds = Seconds % 60;
-//
-//            MilliSeconds = (int) (UpdateTime % 1000);
-//
-//            textView.setText("" + Minutes + ":"
-//                    + String.format("%02d", Seconds) + ":"
-//                    + String.format("%03d", MilliSeconds));
-//
-//            handler.postDelayed(this, 0);
-//        }
-//
-//    };
+    public Runnable runnable = new Runnable() {
+
+        public void run() {
+
+            MillisecondTime = SystemClock.uptimeMillis() - StartTime;
+
+            UpdateTime = TimeBuff + MillisecondTime;
+
+            Seconds = (int) (UpdateTime / 1000);
+
+            Minutes = Seconds / 60;
+
+            Seconds = Seconds % 60;
+
+            MilliSeconds = (int) (UpdateTime % 1000);
+
+            stopWatchTextView.setText("" + Minutes + ":"
+                    + String.format("%02d", Seconds) + ":"
+                    + String.format("%03d", MilliSeconds));
+
+            handler.postDelayed(this, 0);
+        }
+
+    };
 
 }

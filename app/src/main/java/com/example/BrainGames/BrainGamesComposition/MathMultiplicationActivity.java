@@ -38,7 +38,7 @@ public class MathMultiplicationActivity extends AppCompatActivity {
     /** Initialize the score to 0. */
     private int score = 0;
 
-    /** Initialize the textView object for "correct". */
+    /** Initialize the stopWatchTextView object for "correct". */
     private TextView multiplicationDisplayCorrect;
 
     /** Initialize the amount of answers correct to 0. */

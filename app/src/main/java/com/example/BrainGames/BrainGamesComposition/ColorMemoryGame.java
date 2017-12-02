@@ -202,7 +202,7 @@ public class ColorMemoryGame extends AppCompatActivity implements View.OnClickLi
         }
 
         //If two buttons are the same, flip, change variables
-        //and reset.
+        //and resetButton.
         if (selectedButton1.getFrontDrawableId() == button.getFrontDrawableId()) {
             button.flip();
             button.setMatched(true);
@@ -214,7 +214,7 @@ public class ColorMemoryGame extends AppCompatActivity implements View.OnClickLi
             selectedButton1 = null;
 
             clicks();
-        } else { //If not the same, let the user see then reset.
+        } else { //If not the same, let the user see then resetButton.
             selectedButton2 = button;
             selectedButton2.flip();
             isBusy = true;
