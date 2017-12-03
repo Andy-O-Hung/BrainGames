@@ -14,38 +14,34 @@ import java.util.Random;
 
 public class ReactionActivity extends AppCompatActivity {
 
-    TextView stopWatchTextView;
+    private TextView stopWatchTextView;
 
-    Button startButton, resetButton, reactionButton;
+    private Button startButton, resetButton, reactionButton;
 
-    long MillisecondTime, StartTime, TimeBuff, UpdateTime = 0L ;
+    private long millisecondTime, startTime, timeBuff, updateTime = 0L;
 
-    Handler handler;
+    private Handler handler;
 
-    int Seconds, Minutes, MilliSeconds ;
-
-
-
-
+    private int seconds, minutes, milliSeconds;
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reaction);
 
-        reactionButton = (Button) findViewById(R.id. reactionLayoutButton);
+        reactionButton = (Button) findViewById(R.id.reactionLayoutButton);
         reactionButton.setBackgroundColor(Color.RED);
         reactionButton.setEnabled(false);
 
-        resetButton = (Button) findViewById(R.id. reactionResetLayoutButton);
+        resetButton = (Button) findViewById(R.id.reactionResetLayoutButton);
 
-        startButton = (Button) findViewById(R.id. reactionStartLayoutButton);
+        startButton = (Button) findViewById(R.id.reactionStartLayoutButton);
 
-        stopWatchTextView = (TextView) findViewById(R.id. stopWatchTextViewLayout);
+        stopWatchTextView = (TextView) findViewById(R.id.stopWatchTextViewLayout);
         stopWatchTextView.setText("");
 
-        handler = new Handler() ;
+        handler = new Handler();
 
         onClickReactionButtonListener();
         onClickResetButtonListener();
@@ -98,11 +94,11 @@ public class ReactionActivity extends AppCompatActivity {
         );
     }
 
-    public void countDownTimer(){
+    public void countDownTimer() {
         int randomTime = 1 + new Random().nextInt(4);
-        final CountDownTimer countDownTimer = new CountDownTimer(randomTime * 1000,1000) {
+        final CountDownTimer countDownTimer = new CountDownTimer(randomTime * 1000, 1000) {
             @Override
-            public void onTick(long millis) {
+            public void onTick(final long millis) {
 
             }
 
@@ -112,55 +108,57 @@ public class ReactionActivity extends AppCompatActivity {
                 reactionButton.setBackgroundColor(Color.GREEN);
                 reactionButton.setEnabled(true);
                 startStopWatch();
+
+                //maybe for 2x2?
                 int pickRandom = new Random().nextInt(4);
             }
         }.start();
     }
 
-    public void stopStopWatch(){
-                TimeBuff += MillisecondTime;
+    public void stopStopWatch() {
+                timeBuff += millisecondTime;
 
                 handler.removeCallbacks(runnable);
     }
 
-    public void startStopWatch(){
-                StartTime = SystemClock.uptimeMillis();
+    public void startStopWatch() {
+                startTime = SystemClock.uptimeMillis();
                 handler.postDelayed(runnable, 0);
 
                 //resetButton.setEnabled(false);
     }
 
-    public void resetStopWatch(){
-                MillisecondTime = 0L ;
-                StartTime = 0L ;
-                TimeBuff = 0L ;
-                UpdateTime = 0L ;
-                Seconds = 0 ;
-                Minutes = 0 ;
-                MilliSeconds = 0 ;
+    public void resetStopWatch() {
+                millisecondTime = 0L;
+                startTime = 0L;
+                timeBuff = 0L;
+                updateTime = 0L;
+                seconds = 0;
+                minutes = 0;
+                milliSeconds = 0;
 
                 stopWatchTextView.setText("00:00:00");
     }
     //This will be the run the stopwatch
-    public Runnable runnable = new Runnable() {
+    private Runnable runnable = new Runnable() {
 
         public void run() {
 
-            MillisecondTime = SystemClock.uptimeMillis() - StartTime;
+            millisecondTime = SystemClock.uptimeMillis() - startTime;
 
-            UpdateTime = TimeBuff + MillisecondTime;
+            updateTime = timeBuff + millisecondTime;
 
-            Seconds = (int) (UpdateTime / 1000);
+            seconds = (int) (updateTime / 1000);
 
-            Minutes = Seconds / 60;
+            minutes = seconds / 60;
 
-            Seconds = Seconds % 60;
+            seconds = seconds % 60;
 
-            MilliSeconds = (int) (UpdateTime % 1000);
+            milliSeconds = (int) (updateTime % 1000);
 
-            stopWatchTextView.setText("" + Minutes + ":"
-                    + String.format("%02d", Seconds) + ":"
-                    + String.format("%03d", MilliSeconds));
+            stopWatchTextView.setText("" + minutes + ":"
+                    + String.format("%02d", seconds) + ":"
+                    + String.format("%03d", milliSeconds));
 
             handler.postDelayed(this, 0);
         }

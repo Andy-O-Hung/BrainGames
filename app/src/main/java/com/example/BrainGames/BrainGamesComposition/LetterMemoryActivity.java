@@ -18,37 +18,37 @@ public class LetterMemoryActivity extends AppCompatActivity {
 
     private Button checkButton;
 
-    String [] userInputStorage;
+    private String[] userInputStorage;
 
-    String [] computerGenerated;
+    private String[] computerGenerated;
 
-    int level = 1;
+    private int level = 1;
 
-    int scoreCorrect = 0;
+    private int scoreCorrect = 0;
 
-    int scoreWrong = 0;
+    private int scoreWrong = 0;
 
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_letter_memory);
 
         displayLetterMemory = (TextView) findViewById(R.id.letterMemoryTextViewLayout);
 
-        userInput = (EditText) findViewById(R.id. letterInputLayout);
+        userInput = (EditText) findViewById(R.id.letterInputLayout);
 
-        checkButton = (Button) findViewById(R.id. letterCheckLayoutButton);
+        checkButton = (Button) findViewById(R.id.letterCheckLayoutButton);
 
         generateQuestion();
         printQuestion();
         onClickCheckButtonListener();
     }
 
-    public void generateQuestion(){
+    public void generateQuestion() {
         computerGenerated = new String[level];
-        for(int x = 0; x < level; x++){
+        for (int x = 0; x < level; x++) {
             int rand = 97 + new Random().nextInt(26);
             char charLetter = (char) rand;
             computerGenerated[x] = String.valueOf(charLetter);
@@ -56,9 +56,9 @@ public class LetterMemoryActivity extends AppCompatActivity {
 
     }
 
-    public void printQuestion(){
+    public void printQuestion() {
         String memorize = "";
-        for(int x = 0; x < computerGenerated.length; x++){
+        for (int x = 0; x < computerGenerated.length; x++) {
             memorize = memorize + computerGenerated[x];
         }
         displayLetterMemory.setText(memorize);
@@ -73,19 +73,14 @@ public class LetterMemoryActivity extends AppCompatActivity {
         }, 3000);
     }
 
-    public boolean checkUserInput(){
+    public boolean checkUserInput() {
         int counter = 0;
-        for (int x = 0; x < computerGenerated.length; x++){
-            if (userInputStorage[x].equalsIgnoreCase(computerGenerated[x])){
+        for (int x = 0; x < computerGenerated.length; x++) {
+            if (userInputStorage[x].equalsIgnoreCase(computerGenerated[x])) {
                 counter++;
             }
         }
-        if (counter == computerGenerated.length){
-            return true;
-        }
-        else {
-            return false;
-        }
+        return counter == computerGenerated.length;
     }
 
     public void onClickCheckButtonListener() {
@@ -93,7 +88,7 @@ public class LetterMemoryActivity extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(final View view) {
-                         if((userInput.length() > computerGenerated.length) || (userInput.length() < computerGenerated.length)){
+                         if ((userInput.length() > computerGenerated.length) || (userInput.length() < computerGenerated.length)) {
                              displayLetterMemory.setText("INCORRECT");
                              generateQuestion();
                              final android.os.Handler handler = new android.os.Handler();
@@ -106,14 +101,13 @@ public class LetterMemoryActivity extends AppCompatActivity {
                              userInput.setText("");
                              scoreWrong++;
 
-                         }
-                         else{
+                         } else {
                              String tempUserInput = String.valueOf(userInput.getText());
                              userInputStorage = new String[computerGenerated.length];
-                             for(int x = 0; x < tempUserInput.length(); x++){
+                             for (int x = 0; x < tempUserInput.length(); x++) {
                                  userInputStorage[x] = String.valueOf(tempUserInput.charAt(x));
                              }
-                             if (checkUserInput()){
+                             if (checkUserInput()) {
                                  level++;
                                  displayLetterMemory.setText("CORRECT");
                                  generateQuestion();
@@ -127,8 +121,7 @@ public class LetterMemoryActivity extends AppCompatActivity {
 
                                  userInput.setText("");
                                  scoreCorrect++;
-                             }
-                             else {
+                             } else {
                                  displayLetterMemory.setText("INCORRECT");
                                  generateQuestion();
                                  final android.os.Handler handler = new android.os.Handler();
