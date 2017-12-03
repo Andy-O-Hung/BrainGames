@@ -26,7 +26,8 @@
             android:label="@string/title_activity_math_multiplication"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".ReactionActivity" />
-        <activity android:name=".MathDivisionActivity"></activity>
+        <activity android:name=".MathDivisionActivity" />
+        <activity android:name=".LetterMemoryActivity"></activity>
     </application>
 
 </manifest>

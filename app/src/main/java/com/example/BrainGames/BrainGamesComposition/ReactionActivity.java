@@ -43,7 +43,7 @@ public class ReactionActivity extends AppCompatActivity {
         startButton = (Button) findViewById(R.id. reactionStartLayoutButton);
 
         stopWatchTextView = (TextView) findViewById(R.id. stopWatchTextViewLayout);
-        stopWatchTextView.setText("kappa");
+        stopWatchTextView.setText("");
 
         handler = new Handler() ;
 
@@ -103,7 +103,6 @@ public class ReactionActivity extends AppCompatActivity {
         final CountDownTimer countDownTimer = new CountDownTimer(randomTime * 1000,1000) {
             @Override
             public void onTick(long millis) {
-                stopWatchTextView.setText("" + (int) (millis /1000));
 
             }
 
@@ -113,6 +112,7 @@ public class ReactionActivity extends AppCompatActivity {
                 reactionButton.setBackgroundColor(Color.GREEN);
                 reactionButton.setEnabled(true);
                 startStopWatch();
+                int pickRandom = new Random().nextInt(4);
             }
         }.start();
     }

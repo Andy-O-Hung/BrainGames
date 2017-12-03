@@ -15,6 +15,9 @@ public class MemoryActivity extends AppCompatActivity {
     /** Initialize our color game button. */
     private Button colorMemoryActivity;
 
+    /** Initialize our color game button. */
+    private Button letterMemoryActivity;
+
     /**
      * Initializes all the components of our color memory
      * game activity.
@@ -25,6 +28,7 @@ public class MemoryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_memory);
         onClickColorMemoryButtonListener();
+        onClickLetterMemoryButtonListener();
     }
 
     /**
@@ -40,6 +44,18 @@ public class MemoryActivity extends AppCompatActivity {
                         startActivity(colorMemoryActivity);
                     }
                 }
+        );
+    }
+
+    public void onClickLetterMemoryButtonListener() {
+        letterMemoryActivity = (Button) findViewById(R.id.letterMemoryMainLayout);
+        letterMemoryActivity.setOnClickListener(new View.OnClickListener() {
+                                                   @Override
+                                                   public void onClick(final View v) {
+                                                       Intent letterMemoryActivity = new Intent(MemoryActivity.this, LetterMemoryActivity.class);
+                                                       startActivity(letterMemoryActivity);
+                                                   }
+                                               }
         );
     }
 }
