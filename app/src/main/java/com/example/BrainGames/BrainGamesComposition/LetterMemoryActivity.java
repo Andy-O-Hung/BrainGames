@@ -12,7 +12,7 @@ import java.util.Random;
 
 public class LetterMemoryActivity extends AppCompatActivity {
 
-    private TextView displayLetterMemory;
+    private TextView displayLetterMemory, displayLetterStreak, displayLetterFails;
 
     private EditText userInput;
 
@@ -36,6 +36,12 @@ public class LetterMemoryActivity extends AppCompatActivity {
         setContentView(R.layout.activity_letter_memory);
 
         displayLetterMemory = (TextView) findViewById(R.id.letterMemoryTextViewLayout);
+
+        displayLetterStreak = (TextView) findViewById(R.id.letterScoreLayout);
+        displayLetterStreak.setText("Streak: " + String.valueOf(scoreCorrect));
+
+        displayLetterFails = (TextView) findViewById(R.id.letterIncorrectLayout);
+        displayLetterFails.setText("Fails: " + String.valueOf(scoreWrong));
 
         userInput = (EditText) findViewById(R.id.letterInputLayout);
 
@@ -90,6 +96,7 @@ public class LetterMemoryActivity extends AppCompatActivity {
                     public void onClick(final View view) {
                          if ((userInput.length() > computerGenerated.length) || (userInput.length() < computerGenerated.length)) {
                              displayLetterMemory.setText("INCORRECT");
+                             level = 1;
                              generateQuestion();
                              final android.os.Handler handler = new android.os.Handler();
                              handler.postDelayed(new Runnable() {
@@ -100,6 +107,7 @@ public class LetterMemoryActivity extends AppCompatActivity {
                              }, 500);
                              userInput.setText("");
                              scoreWrong++;
+                             displayLetterFails.setText("Fails: " + String.valueOf(scoreWrong));
 
                          } else {
                              String tempUserInput = String.valueOf(userInput.getText());
@@ -121,8 +129,10 @@ public class LetterMemoryActivity extends AppCompatActivity {
 
                                  userInput.setText("");
                                  scoreCorrect++;
+                                 displayLetterStreak.setText("Streak: " + String.valueOf(scoreCorrect));
                              } else {
                                  displayLetterMemory.setText("INCORRECT");
+                                 level = 1;
                                  generateQuestion();
                                  final android.os.Handler handler = new android.os.Handler();
                                  handler.postDelayed(new Runnable() {
@@ -133,6 +143,7 @@ public class LetterMemoryActivity extends AppCompatActivity {
                                  }, 500);
                                  userInput.setText("");
                                  scoreWrong++;
+                                 displayLetterFails.setText("Fails: " + String.valueOf(scoreWrong));
                              }
 
                          }

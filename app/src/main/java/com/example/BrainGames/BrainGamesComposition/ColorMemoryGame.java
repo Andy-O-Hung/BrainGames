@@ -55,9 +55,9 @@ public class ColorMemoryGame extends AppCompatActivity implements View.OnClickLi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game4x4color);
         state = (TextView) findViewById(R.id.colorStateActivity);
-        state.setText("In Progress");
+        state.setText("Idle");
         clickCounter = (TextView) findViewById(R.id.clicksCounterActivity);
-        clickCounter.setText(String.valueOf(clicks));
+        clickCounter.setText("Clicks: " + String.valueOf(clicks));
         //Create our layout of the 4x4 game.
         GridLayout gridLayout = (GridLayout) findViewById(R.id.grid_layout_4x4);
 
@@ -154,7 +154,10 @@ public class ColorMemoryGame extends AppCompatActivity implements View.OnClickLi
                     recreate();
                 }
             }, 1500);
-            //Log.d("finished", String.valueOf(check));
+            state.setText("DONE!");
+            //Not working why?
+            clickCounter.setText("You won with " + String.valueOf(clicks) + " clicks!");
+            Log.d("finished", String.valueOf(check));
 
         }
     }
@@ -166,7 +169,7 @@ public class ColorMemoryGame extends AppCompatActivity implements View.OnClickLi
      */
     public void clicks() {
         clicks++;
-        clickCounter.setText(String.valueOf(clicks));
+        clickCounter.setText("Clicks: " + String.valueOf(clicks));
     }
     /**
      * Our action listener whenever a button is clicked.
@@ -175,8 +178,8 @@ public class ColorMemoryGame extends AppCompatActivity implements View.OnClickLi
     @Override
     public void onClick(final View view) {
         checkClear();
-        Log.d("?", "clicked");
-
+        //Log.d("?", "clicked");
+        state.setText("In Progress");
         //So it doesn't crash.
         if (isBusy) {
             return;

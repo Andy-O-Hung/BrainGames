@@ -277,11 +277,6 @@ public class ReactionActivity extends AppCompatActivity {
         }.start();
     }
 
-    public void stopStopWatch() {
-                timeBuff += millisecondTime;
-                handler.removeCallbacks(runnable);
-                startButton.setEnabled(true);
-    }
 
     public void startStopWatch() {
                 startTime = SystemClock.uptimeMillis();
