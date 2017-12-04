@@ -95,14 +95,12 @@ public class ReactionActivity extends AppCompatActivity {
                         resetStopWatch();
                         reactionButton0.setBackgroundColor(Color.RED);
                         reactionButton0.setEnabled(false);
-                        if (remain == 0 ){
-                            if (won >= 4){
+                        if (remain == 0) {
+                            if (won >= 4) {
                                 state.setText("State: Done! Wow your fast!");
-                            }
-                            else if (won < 4 && won > 1){
+                            } else if (won < 4 && won > 1) {
                                 state.setText("State: Done! Your average.");
-                            }
-                            else {
+                            } else {
                                 state.setText("State: Done! What are you doing?");
                             }
                             return;
@@ -123,14 +121,12 @@ public class ReactionActivity extends AppCompatActivity {
                         resetStopWatch();
                         reactionButton1.setBackgroundColor(Color.RED);
                         reactionButton1.setEnabled(false);
-                        if (remain == 0 ){
-                            if (won >= 4){
+                        if (remain == 0) {
+                            if (won >= 4) {
                                 state.setText("State: Done! Wow your fast!");
-                            }
-                            else if (won < 4 && won > 1){
+                            } else if (won < 4 && won > 1) {
                                 state.setText("State: Done! Your average.");
-                            }
-                            else {
+                            } else {
                                 state.setText("State: Done! What are you doing?");
                             }
                             return;
@@ -151,14 +147,12 @@ public class ReactionActivity extends AppCompatActivity {
                         resetStopWatch();
                         reactionButton2.setBackgroundColor(Color.RED);
                         reactionButton2.setEnabled(false);
-                        if (remain == 0 ){
-                            if (won >= 4){
+                        if (remain == 0) {
+                            if (won >= 4) {
                                 state.setText("State: Done! Wow your fast!");
-                            }
-                            else if (won < 4 && won > 1){
+                            } else if (won < 4 && won > 1) {
                                 state.setText("State: Done! Your average.");
-                            }
-                            else {
+                            } else {
                                 state.setText("State: Done! What are you doing?");
                             }
                             return;
@@ -178,14 +172,12 @@ public class ReactionActivity extends AppCompatActivity {
                         resetStopWatch();
                         reactionButton3.setBackgroundColor(Color.RED);
                         reactionButton3.setEnabled(false);
-                        if (remain == 0 ){
-                            if (won >= 4){
+                        if (remain == 0) {
+                            if (won >= 4) {
                                 state.setText("State: Done! Wow your fast!");
-                            }
-                            else if (won < 4 && won > 1){
+                            } else if (won < 4 && won > 1) {
                                 state.setText("State: Done! Your average.");
-                            }
-                            else {
+                            } else {
                                 state.setText("State: Done! What are you doing?");
                             }
                             return;
@@ -260,22 +252,22 @@ public class ReactionActivity extends AppCompatActivity {
             @Override
             public void onFinish() {
                 int pickRandom = new Random().nextInt(4);
-                if (pickRandom == 0){
+                if (pickRandom == 0) {
                     reactionButton0.setBackgroundColor(Color.GREEN);
                     reactionButton0.setEnabled(true);
                     startStopWatch();
                 }
-                if (pickRandom == 1){
+                if (pickRandom == 1) {
                     reactionButton1.setBackgroundColor(Color.GREEN);
                     reactionButton1.setEnabled(true);
                     startStopWatch();
                 }
-                if (pickRandom == 2){
+                if (pickRandom == 2) {
                     reactionButton2.setBackgroundColor(Color.GREEN);
                     reactionButton2.setEnabled(true);
                     startStopWatch();
                 }
-                if (pickRandom == 3){
+                if (pickRandom == 3) {
                     reactionButton3.setBackgroundColor(Color.GREEN);
                     reactionButton3.setEnabled(true);
                     startStopWatch();
@@ -299,15 +291,14 @@ public class ReactionActivity extends AppCompatActivity {
     }
 
     public void resetStopWatch() {
-                 if (seconds >= 1){
+                 if (seconds >= 1) {
                      lost++;
                      stopWatchLoseView.setText("Missed: " + String.valueOf(lost));
 
-                 }
-                 else {
+                 } else {
                        won++;
                       stopWatchWonView.setText("Scored: " + String.valueOf(won));
-                    }
+                 }
                 millisecondTime = 0L;
                 startTime = 0L;
                 timeBuff = 0L;
