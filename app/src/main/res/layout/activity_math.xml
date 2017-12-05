@@ -5,46 +5,46 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.BrainGames.BrainGamesComposition.MathActivity"
-    tools:layout_editor_absoluteY="81dp"
-    tools:layout_editor_absoluteX="0dp">
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="81dp">
 
     <Button
         android:id="@+id/additionActivityButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Addition"
-        android:layout_marginStart="15dp"
-        tools:layout_constraintBottom_creator="1"
-        app:layout_constraintBottom_toTopOf="@+id/subtractionActivityButton"
-        tools:layout_constraintLeft_creator="1"
         android:layout_marginBottom="16dp"
+        android:layout_marginLeft="72dp"
+        android:layout_marginStart="15dp"
+        android:text="Addition"
+        app:layout_constraintBottom_toTopOf="@+id/subtractionActivityButton"
         app:layout_constraintLeft_toLeftOf="@+id/subtractionActivityButton"
-        android:layout_marginLeft="72dp" />
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1" />
 
     <Button
         android:id="@+id/subtractionActivityButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Subtraction"
-        tools:layout_constraintBottom_creator="1"
-        app:layout_constraintBottom_toTopOf="@+id/multiplicationActivityButton"
-        android:layout_marginStart="9dp"
-        tools:layout_constraintLeft_creator="1"
         android:layout_marginBottom="22dp"
-        app:layout_constraintLeft_toLeftOf="@+id/multiplicationActivityButton" />
+        android:layout_marginStart="9dp"
+        android:text="Subtraction"
+        app:layout_constraintBottom_toTopOf="@+id/multiplicationActivityButton"
+        app:layout_constraintLeft_toLeftOf="@+id/multiplicationActivityButton"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1" />
 
     <Button
         android:id="@+id/multiplicationActivityButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Multiplication"
-        tools:layout_constraintRight_creator="1"
-        tools:layout_constraintBottom_creator="1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        tools:layout_constraintLeft_creator="1"
         android:layout_marginBottom="216dp"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        android:text="Multiplication"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1" />
 
     <Button
         android:id="@+id/divisionActivityButton"
@@ -57,4 +57,15 @@
         app:layout_constraintTop_toBottomOf="@+id/multiplicationActivityButton"
         tools:layout_constraintLeft_creator="1"
         tools:layout_constraintTop_creator="1" />
+
+    <Button
+        android:id="@+id/combinationActivityButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="COMBINATION"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.907" />
 </android.support.constraint.ConstraintLayout>

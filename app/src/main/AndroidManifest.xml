@@ -27,7 +27,8 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".ReactionActivity" />
         <activity android:name=".MathDivisionActivity" />
-        <activity android:name=".LetterMemoryActivity"></activity>
+        <activity android:name=".LetterMemoryActivity" />
+        <activity android:name=".MathCombinationActivity"></activity>
     </application>
 
 </manifest>

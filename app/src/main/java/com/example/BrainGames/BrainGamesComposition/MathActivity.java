@@ -23,6 +23,9 @@ public class MathActivity extends AppCompatActivity {
     /** Initialize the division button. */
     private Button divisionButton;
 
+    /** Initialize the division button. */
+    private Button combinationButton;
+
     /**
      * Initializes all the components of our color memory
      * game activity.
@@ -35,7 +38,8 @@ public class MathActivity extends AppCompatActivity {
         onClickMathAdditionButtonListener();
         onClickMathSubtractionButtonListener();
         onClickMathMultiplicationButtonListener();
-        onClickDivisionMultiplicationButtonListener();
+        onClickDivisionButtonListener();
+        onClickCombinationButtonListener();
     }
 
     /**
@@ -87,7 +91,7 @@ public class MathActivity extends AppCompatActivity {
         );
     }
 
-    public void onClickDivisionMultiplicationButtonListener() {
+    public void onClickDivisionButtonListener() {
         divisionButton = (Button) findViewById(R.id.divisionActivityButton);
         divisionButton.setOnClickListener(
                 new View.OnClickListener() {
@@ -95,6 +99,19 @@ public class MathActivity extends AppCompatActivity {
                     public void onClick(final View v) {
                         Intent mathDivisionActivity = new Intent(MathActivity.this, MathDivisionActivity.class);
                         startActivity(mathDivisionActivity);
+                    }
+                }
+        );
+    }
+
+    public void onClickCombinationButtonListener() {
+        combinationButton = (Button) findViewById(R.id.combinationActivityButton);
+        combinationButton.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(final View v) {
+                        Intent mathCombinationActivity = new Intent(MathActivity.this, MathCombinationActivity.class);
+                        startActivity(mathCombinationActivity);
                     }
                 }
         );

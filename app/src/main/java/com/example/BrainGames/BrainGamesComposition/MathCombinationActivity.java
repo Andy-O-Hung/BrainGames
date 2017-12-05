@@ -1,6 +1,5 @@
 package com.example.BrainGames.BrainGamesComposition;
 
-
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -8,23 +7,18 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-
-/**
- * This is the class that will run the multiplication game.
- */
-public class MathMultiplicationActivity extends AppCompatActivity {
-
+public class MathCombinationActivity extends AppCompatActivity {
     /** Initialize the check button. */
     private Button checkButton;
 
     /** Initialize.  */
-    private TextView displayMultiplication;
+    private TextView displayCombination;
 
     /** Initialize the user's input. */
     private int userInput;
 
     /** Initialize the input object. */
-    private EditText mulInput;
+    private EditText combInput;
 
     /** Initialize the math object. */
     private Math math;
@@ -39,44 +33,39 @@ public class MathMultiplicationActivity extends AppCompatActivity {
     private int score = 0;
 
     /** Initialize the stopWatchTextView object for "correct". */
-    private TextView multiplicationDisplayCorrect;
+    private TextView combinationDisplayCorrect;
 
     /** Initialize the amount of answers correct to 0. */
     private int correct = 0;
 
     /** Initialize the TextView object for "wrong". */
-    private TextView multiplicationDisplayWrong;
+    private TextView combinationDisplayWrong;
 
     /** Initialize the amount of wrong answers to 0. */
     private int wrong = 0;
 
-    /**
-     * Initializes all the components of our color memory
-     * game activity.
-     * @param savedInstanceState Android save instance.
-     */
+
     @Override
-    protected void onCreate(final Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_math_multiplication);
+        setContentView(R.layout.activity_math_combination);
 
         //Initialize what the texts display
-        displayMultiplication = (TextView) findViewById(R.id.combinationQuestionLayout);
-        generateMultiplication();
-        displayMultiplication.setText(results[0] + " * " + results[1] + " =  ?");
-        mulInput = (EditText) findViewById(R.id.multiplicationInput);
-        mulInput.setText("");
-        multiplicationDisplayCorrect = (TextView) findViewById(R.id.combinationDisplayCorrectActivity);
-        multiplicationDisplayCorrect.setText("Correct: " + String.valueOf(correct));
-        multiplicationDisplayWrong = (TextView) findViewById(R.id.combinationDisplayWrongActivity);
-        multiplicationDisplayWrong.setText("Wrong: " + String.valueOf(wrong));
+        displayCombination = (TextView) findViewById(R.id.combinationQuestionLayout);
+        generateCombination();
+        displayCombination.setText(results[0] + " * " + results[1] + " =  ?");
+        combInput = (EditText) findViewById(R.id.combinationInput);
+        combInput.setText("");
+        combinationDisplayCorrect = (TextView) findViewById(R.id.combinationDisplayCorrectActivity);
+        combinationDisplayCorrect.setText("Correct: " + String.valueOf(correct));
+        combinationDisplayWrong = (TextView) findViewById(R.id.combinationDisplayWrongActivity);
+        combinationDisplayWrong.setText("Wrong: " + String.valueOf(wrong));
         onClickCheckButtonListener();
     }
-
     /**
      * This will generate a new multiplication question.
      */
-    public void generateMultiplication() {
+    public void generateCombination() {
         math = new Math(level);
         math.generateMul();
         results = math.getNumbers();
@@ -91,9 +80,9 @@ public class MathMultiplicationActivity extends AppCompatActivity {
         //user knows correct or wrong.
         final android.os.Handler handler = new android.os.Handler();
         try {
-            userInput = Integer.parseInt(String.valueOf(mulInput.getText()));
+            userInput = Integer.parseInt(String.valueOf(combInput.getText()));
         } catch (NumberFormatException ex) {
-            displayMultiplication.setText("ENTER A INTEGER!");
+            displayCombination.setText("ENTER A INTEGER!");
             handler.postDelayed(new Runnable() {
                 @Override
                 public void run() {
@@ -103,14 +92,14 @@ public class MathMultiplicationActivity extends AppCompatActivity {
             return;
         }
         if (results[2] == userInput) {
-            displayMultiplication.setText("CORRECT");
+            displayCombination.setText("CORRECT");
             correct++;
-            multiplicationDisplayCorrect.setText("Correct: " + String.valueOf(correct));
+            combinationDisplayCorrect.setText("Correct: " + String.valueOf(correct));
             score++;
         } else {
-            displayMultiplication.setText("WRONG");
+            displayCombination.setText("WRONG");
             wrong++;
-            multiplicationDisplayWrong.setText("Wrong: " + String.valueOf(wrong));
+            combinationDisplayWrong.setText("Wrong: " + String.valueOf(wrong));
         }
 
         //Create delay so user knows if its right or wrong.
@@ -145,9 +134,9 @@ public class MathMultiplicationActivity extends AppCompatActivity {
             level++;
         }
 
-        generateMultiplication();
-        displayMultiplication.setText(results[0] + " * " + results[1] + " =  ?");
-        mulInput.setText("");
+        generateCombination();
+        displayCombination.setText(results[0] + " * " + results[1] + " =  ?");
+        combInput.setText("");
     }
 
     /**
