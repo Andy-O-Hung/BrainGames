@@ -3,25 +3,29 @@ package com.example.BrainGames.BrainGamesComposition;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import java.util.Random;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.util.Random;
+
+/**
+ * The activity of our math combination game.
+ */
 public class MathCombinationActivity extends AppCompatActivity {
     /** Initialize the check button. */
     private Button checkButton;
 
-    /** Initialize.  */
+    /** Initialize the display question.  */
     private TextView displayCombination;
 
     /** Initialize the user's input. */
     private int userInput;
 
-    /** Initialize the input object. */
+    /** Initialize the input. */
     private EditText combInput;
 
-    /** Initialize the math object. */
+    /** Initialize the math. */
     private Math math;
 
     /** Initialize the results. */
@@ -45,18 +49,23 @@ public class MathCombinationActivity extends AppCompatActivity {
     /** Initialize the amount of wrong answers to 0. */
     private int wrong = 0;
 
-    /** Initialize the random number generator for the combination function */
-    private int value = 0;
+//    /** Initialize the random number generator for the combination function */
+//    private int value = 0;
 
-    /** Initialize the randomizer*/
+    /** Initialize the randomizer.*/
     private Random rand = new Random();
 
-    /** Initialize label string */
+    /** Initialize label string.*/
     private String label = "";
 
 
+    /**
+     * Initializes all the components of our combination
+     * game activity.
+     * @param savedInstanceState Android save instance.
+     */
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_math_combination);
 
@@ -82,16 +91,13 @@ public class MathCombinationActivity extends AppCompatActivity {
         if (value == 0) {
             math.generateMul();
             label = " * ";
-        }
-        else if (value == 1) {
+        } else if (value == 1) {
             math.generateDiv();
             label = " / ";
-        }
-        else if (value == 2){
+        } else if (value == 2) {
             math.generateSub();
             label = " - ";
-        }
-        else if (value == 3){
+        } else if (value == 3) {
             math.generateSum();
             label = " + ";
         }

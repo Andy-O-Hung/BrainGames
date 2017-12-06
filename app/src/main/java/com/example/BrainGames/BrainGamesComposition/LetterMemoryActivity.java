@@ -10,26 +10,56 @@ import android.widget.TextView;
 
 import java.util.Random;
 
+/**
+ * The activity of our letter memory game where.
+ */
 public class LetterMemoryActivity extends AppCompatActivity {
 
+    /**
+     * Initialize the text view.
+     */
     private TextView displayLetterMemory, displayLetterStreak, displayLetterFails;
 
+    /**
+     * Initialize the user input.
+     */
     private EditText userInput;
 
+    /**
+     * Initialize the check button.
+     */
     private Button checkButton;
 
+    /**
+     * Initialize the user input.
+     */
     private String[] userInputStorage;
 
+    /**
+     * Initialize the generated question.
+     */
     private String[] computerGenerated;
 
+    /**
+     * Initialize the level.
+     */
     private int level = 1;
 
+    /**
+     * Initialize the correct score.
+     */
     private int scoreCorrect = 0;
 
+    /**
+     * Initialize the wrong score.
+     */
     private int scoreWrong = 0;
 
-
-
+    /**
+     * Initializes all the components of our letter memory
+     * game activity.
+     * @param savedInstanceState Android save instance.
+     */
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,6 +82,9 @@ public class LetterMemoryActivity extends AppCompatActivity {
         onClickCheckButtonListener();
     }
 
+    /**
+     * This will generate a new letter question.
+     */
     public void generateQuestion() {
         computerGenerated = new String[level];
         for (int x = 0; x < level; x++) {
@@ -62,6 +95,9 @@ public class LetterMemoryActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * This will print the question by setting the text view.
+     */
     public void printQuestion() {
         String memorize = "";
         for (int x = 0; x < computerGenerated.length; x++) {
@@ -79,6 +115,10 @@ public class LetterMemoryActivity extends AppCompatActivity {
         }, 3000);
     }
 
+    /**
+     * Checks if the user input matches.
+     * @return true or false.
+     */
     public boolean checkUserInput() {
         int counter = 0;
         for (int x = 0; x < computerGenerated.length; x++) {
@@ -89,6 +129,9 @@ public class LetterMemoryActivity extends AppCompatActivity {
         return counter == computerGenerated.length;
     }
 
+    /**
+     * The actionlistener for check button.
+     */
     public void onClickCheckButtonListener() {
         checkButton.setOnClickListener(
                 new View.OnClickListener() {

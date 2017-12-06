@@ -12,20 +12,42 @@ import android.os.Handler;
 
 import java.util.Random;
 
+/**
+ * The activity for our reaction game.
+ */
 public class ReactionActivity extends AppCompatActivity {
 
+    /**
+     * Initialize our text views.
+     */
     private TextView stopWatchTextView, stopWatchWonView, stopWatchLoseView, remainLeft, state;
 
+    /**
+     * Initialize our buttons.
+     */
     private Button startButton, resetButton, stopButton, reactionButton0, reactionButton1,
     reactionButton2, reactionButton3;
 
+    /**
+     * Initialize our stop watch variables.
+     */
     private long millisecondTime, startTime, timeBuff, updateTime = 0L;
 
+    /**
+     * Initialize our handler for delay.
+     */
     private Handler handler;
 
+    /**
+     * Initialize reaction game integer variables.
+     */
     private int seconds, minutes, milliSeconds, won = 0, lost = 0, remain = 5;
 
-
+    /**
+     * Initializes all the components of our reaction
+     * game activity.
+     * @param savedInstanceState Android save instance.
+     */
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -81,6 +103,9 @@ public class ReactionActivity extends AppCompatActivity {
     //THIS BRACKET ENDS THE onCreate METHOD!!!!!!!!!!!!!!
     }
 
+    /**
+     * The actionlistener for the four reaction buttons.
+     */
     public void onClickReactionButtonListener() {
         //reactionButton0 = (Button) findViewById(R.id.reactionLayoutButton0);
         reactionButton0.setOnClickListener(
@@ -188,6 +213,9 @@ public class ReactionActivity extends AppCompatActivity {
         );
     }
 
+    /**
+     * The actionlistener for our reset game.
+     */
     public void onClickResetButtonListener() {
         resetButton.setOnClickListener(
                 new View.OnClickListener() {
@@ -216,6 +244,9 @@ public class ReactionActivity extends AppCompatActivity {
         );
     }
 
+    /**
+     * The actionlistener to start the reaction game.
+     */
     public void onClickStartButtonListener() {
         startButton.setOnClickListener(
                 new View.OnClickListener() {
@@ -229,17 +260,9 @@ public class ReactionActivity extends AppCompatActivity {
         );
     }
 
-    public void onClickStopButtonListener() {
-//        stopButton.setOnClickListener(
-//                new View.OnClickListener() {
-//                    @Override
-//                    public void onClick(final View view) {
-//                        stopStopWatch();
-//                    }
-//                }
-//        );
-    }
-
+    /**
+     * Creates our count down timer object and picks a random button.
+     */
     public void countDownTimer() {
         int randomTime = 1 + new Random().nextInt(4);
         state.setText("State: Ready!");
@@ -277,7 +300,9 @@ public class ReactionActivity extends AppCompatActivity {
         }.start();
     }
 
-
+    /**
+     * starts the stop watch to record the users reaction time.
+     */
     public void startStopWatch() {
                 startTime = SystemClock.uptimeMillis();
                 handler.postDelayed(runnable, 0);
@@ -285,6 +310,9 @@ public class ReactionActivity extends AppCompatActivity {
                 //resetButton.setEnabled(false);
     }
 
+    /**
+     * resets the stop watch.
+     */
     public void resetStopWatch() {
                  if (seconds >= 1) {
                      lost++;
@@ -305,7 +333,10 @@ public class ReactionActivity extends AppCompatActivity {
                 handler.removeCallbacks(runnable);
 
     }
-    //This will be the run the stopwatch
+
+    /**
+     * This will run the stop watch.
+     */
     private Runnable runnable = new Runnable() {
 
         public void run() {
