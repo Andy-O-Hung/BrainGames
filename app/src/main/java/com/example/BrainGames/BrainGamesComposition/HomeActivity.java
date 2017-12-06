@@ -6,25 +6,40 @@ import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
 
+/**
+ * The activity for our splash screen.
+ */
 public class HomeActivity extends AppCompatActivity {
 
+    /**
+     * Initializes all the components of our splash screen
+     * game activity.
+     * @param savedInstanceState Android save instance.
+     */
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_home);
 
-        splashScreenLauncher splashLauncher = new splashScreenLauncher();
+        SplashScreenLauncher splashLauncher = new SplashScreenLauncher();
         splashLauncher.start();
     }
 
-    private class splashScreenLauncher extends Thread{
-        public void run(){
-            try{
+    /**
+     * Creates a delay before switching activities.
+     */
+    private class SplashScreenLauncher extends Thread {
+
+        /**
+         * The delay code.
+         */
+        public void run() {
+            try {
                 sleep(4500);
-            }catch(InterruptedException e){
+            } catch (InterruptedException e) {
                 e.printStackTrace();
             }
 
