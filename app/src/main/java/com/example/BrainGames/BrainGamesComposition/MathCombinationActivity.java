@@ -3,6 +3,7 @@ package com.example.BrainGames.BrainGamesComposition;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import java.util.Random;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -44,6 +45,15 @@ public class MathCombinationActivity extends AppCompatActivity {
     /** Initialize the amount of wrong answers to 0. */
     private int wrong = 0;
 
+    /** Initialize the random number generator for the combination function */
+    private int value = 0;
+
+    /** Initialize the randomizer*/
+    private Random rand = new Random();
+
+    /** Initialize label string */
+    private String label = "";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +63,7 @@ public class MathCombinationActivity extends AppCompatActivity {
         //Initialize what the texts display
         displayCombination = (TextView) findViewById(R.id.combinationQuestionLayout);
         generateCombination();
-        displayCombination.setText(results[0] + " * " + results[1] + " =  ?");
+        displayCombination.setText(results[0] + label + results[1] + " =  ?");
         combInput = (EditText) findViewById(R.id.combinationInput);
         combInput.setText("");
         combinationDisplayCorrect = (TextView) findViewById(R.id.combinationDisplayCorrectActivity);
@@ -67,7 +77,25 @@ public class MathCombinationActivity extends AppCompatActivity {
      */
     public void generateCombination() {
         math = new Math(level);
-        math.generateMul();
+        int value = rand.nextInt(4);
+
+        if (value == 0) {
+            math.generateMul();
+            label = " * ";
+        }
+        else if (value == 1) {
+            math.generateDiv();
+            label = " / ";
+        }
+        else if (value == 2){
+            math.generateSub();
+            label = " - ";
+        }
+        else if (value == 3){
+            math.generateSum();
+            label = " + ";
+        }
+
         results = math.getNumbers();
     }
 
@@ -135,7 +163,7 @@ public class MathCombinationActivity extends AppCompatActivity {
         }
 
         generateCombination();
-        displayCombination.setText(results[0] + " * " + results[1] + " =  ?");
+        displayCombination.setText(results[0] + label + results[1] + " =  ?");
         combInput.setText("");
     }
 
