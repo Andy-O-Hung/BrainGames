@@ -297,7 +297,8 @@ public class ReactionActivity extends AppCompatActivity {
                 }
 
             }
-        }.start();
+        };
+        countDownTimer.start();
     }
 
     /**

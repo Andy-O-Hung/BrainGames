@@ -99,10 +99,11 @@ public class LetterMemoryActivity extends AppCompatActivity {
      * This will print the question by setting the text view.
      */
     public void printQuestion() {
-        String memorize = "";
-        for (int x = 0; x < computerGenerated.length; x++) {
-            memorize = memorize + computerGenerated[x];
+        StringBuffer mem = new StringBuffer();
+        for (int i = 0; i < computerGenerated.length; ++i) {
+            mem.append(computerGenerated[i]);
         }
+        String memorize = mem.toString();
         displayLetterMemory.setText(memorize);
 
         final android.os.Handler handler = new android.os.Handler();
