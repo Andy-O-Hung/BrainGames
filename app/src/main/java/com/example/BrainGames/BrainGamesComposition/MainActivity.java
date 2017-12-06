@@ -1,6 +1,7 @@
 package com.example.BrainGames.BrainGamesComposition;
 
 import android.content.Intent;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -10,6 +11,9 @@ import android.widget.Button;
  * The main menu/activity for our brain games.
  */
 public class MainActivity extends AppCompatActivity {
+
+    /** Initilize the splash screen time out. */
+    private static int SPLASH_TIME_OUT = 4000;
 
     /** Intialize the the memory games button. */
     private Button memoryButton;
@@ -32,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
         onClickMathButtonListener();
         onClick4x4ButtonListener();
         onClickReactionButtonListener();
-
     }
 
     /**

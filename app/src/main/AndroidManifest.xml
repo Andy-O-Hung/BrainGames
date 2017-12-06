@@ -10,11 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".ColorMemoryGame" />
         <activity android:name=".MathActivity" />
@@ -28,7 +24,14 @@
         <activity android:name=".ReactionActivity" />
         <activity android:name=".MathDivisionActivity" />
         <activity android:name=".LetterMemoryActivity" />
-        <activity android:name=".MathCombinationActivity"></activity>
+        <activity android:name=".MathCombinationActivity" />
+        <activity android:name=".HomeActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
