@@ -47,6 +47,10 @@ public class MemoryActivity extends AppCompatActivity {
         );
     }
 
+    /**
+     * Action listener that will change activity to the
+     * memory letter game.
+     */
     public void onClickLetterMemoryButtonListener() {
         letterMemoryActivity = (Button) findViewById(R.id.letterMemoryMainLayout);
         letterMemoryActivity.setOnClickListener(new View.OnClickListener() {

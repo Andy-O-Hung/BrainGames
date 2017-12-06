@@ -91,6 +91,10 @@ public class MathActivity extends AppCompatActivity {
         );
     }
 
+    /**
+     * Action listener to for division button
+     * to change activity to division.
+     */
     public void onClickDivisionButtonListener() {
         divisionButton = (Button) findViewById(R.id.divisionActivityButton);
         divisionButton.setOnClickListener(
@@ -104,6 +108,10 @@ public class MathActivity extends AppCompatActivity {
         );
     }
 
+    /**
+     * Action listener to for combination button
+     * to change activity to combination.
+     */
     public void onClickCombinationButtonListener() {
         combinationButton = (Button) findViewById(R.id.combinationActivityButton);
         combinationButton.setOnClickListener(

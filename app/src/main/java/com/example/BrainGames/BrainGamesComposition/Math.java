@@ -204,12 +204,13 @@ public class Math {
 
         if (level == 1) {
 
-            while(!isDivisible){
+            while (!isDivisible) {
                 for (int x = 0; x < 2; x++) {
                     numbers[x] = -9 + new Random().nextInt(19);
                 }
-                if(numbers[0] != 0 && numbers[0] != 1 && numbers[1] != 0 && numbers[1] != 1 &&
-                        numbers[0] != numbers[1] && numbers[0] % numbers[1] == 0){
+                if (numbers[0] != 0 && numbers[0] != 1 && numbers[1] != 0 && numbers[1] != 1
+                        &&
+                        numbers[0] != numbers[1] && numbers[0] % numbers[1] == 0) {
                     isDivisible = true;
                 }
             }
@@ -218,12 +219,13 @@ public class Math {
 
         if (level == 2) {
 
-            while(!isDivisible){
+            while (!isDivisible) {
                 numbers[0] = -9 + new Random().nextInt(19);
                 numbers[1] = -99 + new Random().nextInt(199);
 
-                if(numbers[0] != 0 && numbers[0] != 1 && numbers[1] != 0 && numbers[1] != 1 &&
-                        numbers[0] != numbers[1] && numbers[0] % numbers[1] == 0){
+                if (numbers[0] != 0 && numbers[0] != 1 && numbers[1] != 0 && numbers[1] != 1
+                        &&
+                        numbers[0] != numbers[1] && numbers[0] % numbers[1] == 0) {
                     isDivisible = true;
                 }
             }
@@ -232,13 +234,14 @@ public class Math {
 
         if (level == 3) {
 
-            while(!isDivisible){
+            while (!isDivisible) {
                 for (int x = 0; x < 2; x++) {
                     numbers[x] = -99 + new Random().nextInt(199);
                 }
 
-                if(numbers[0] != 0 && numbers[0] != 1 && numbers[1] != 0 && numbers[1] != 1 &&
-                         numbers[0] != numbers[1] && numbers[0] % numbers[1] == 0){
+                if (numbers[0] != 0 && numbers[0] != 1 && numbers[1] != 0 && numbers[1] != 1
+                        &&
+                         numbers[0] != numbers[1] && numbers[0] % numbers[1] == 0) {
                     isDivisible = true;
                 }
             }
@@ -248,12 +251,13 @@ public class Math {
 
         if (level == 4) {
 
-            while(!isDivisible){
+            while (!isDivisible) {
                 numbers[0] = -99 + new Random().nextInt(199);
                 numbers[1] = -999 + new Random().nextInt(1999);
 
-                if(numbers[0] != 0 && numbers[0] != 1 && numbers[1] != 0 && numbers[1] != 1 &&
-                        numbers[0] != numbers[1] && numbers[0] % numbers[1] == 0){
+                if (numbers[0] != 0 && numbers[0] != 1 && numbers[1] != 0 && numbers[1] != 1
+                        &&
+                        numbers[0] != numbers[1] && numbers[0] % numbers[1] == 0) {
                     isDivisible = true;
                 }
             }
@@ -262,12 +266,13 @@ public class Math {
 
         if (level >= 5) {
 
-            while(!isDivisible){
+            while (!isDivisible) {
                 for (int x = 0; x < 2; x++) {
                     numbers[x] = -999 + new Random().nextInt(1999);
                 }
-                if(numbers[0] != 0 && numbers[0] != 1 && numbers[1] != 0 && numbers[1] != 1 &&
-                        numbers[0] != numbers[1] && numbers[0] % numbers[1] == 0){
+                if (numbers[0] != 0 && numbers[0] != 1 && numbers[1] != 0 && numbers[1] != 1
+                        &&
+                        numbers[0] != numbers[1] && numbers[0] % numbers[1] == 0) {
                     isDivisible = true;
                 }
             }

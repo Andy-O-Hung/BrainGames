@@ -7,7 +7,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-
+/**
+ * The activity of our math division game.
+ */
 public class MathDivisionActivity extends AppCompatActivity {
 
     /** Initialize the check button. */
@@ -47,7 +49,7 @@ public class MathDivisionActivity extends AppCompatActivity {
     private int wrong = 0;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_math_division);
 
