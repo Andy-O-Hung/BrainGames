@@ -23,14 +23,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.115"
+        app:layout_constraintVertical_bias="0.084"
         tools:layout_constraintBottom_creator="1"
         tools:layout_constraintLeft_creator="1" />
 
     <Button
         android:id="@+id/subtractionActivityButton"
-        android:layout_width="210"
-        android:layout_height="63"
+        android:layout_width="210dp"
+        android:layout_height="63dp"
         android:background="@color/colorPrimary"
         android:text="Subtraction"
         android:textSize="18sp"
@@ -39,14 +39,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.279"
+        app:layout_constraintVertical_bias="0.287"
         tools:layout_constraintBottom_creator="1"
         tools:layout_constraintLeft_creator="1" />
 
     <Button
         android:id="@+id/multiplicationActivityButton"
-        android:layout_width="210"
-        android:layout_height="63"
+        android:layout_width="210dp"
+        android:layout_height="63dp"
         android:background="@color/colorPrimary"
         android:text="Multiplication"
         android:textSize="18sp"
@@ -55,15 +55,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.431"
+        app:layout_constraintVertical_bias="0.475"
         tools:layout_constraintBottom_creator="1"
         tools:layout_constraintLeft_creator="1"
         tools:layout_constraintRight_creator="1" />
 
     <Button
         android:id="@+id/divisionActivityButton"
-        android:layout_width="210"
-        android:layout_height="63"
+        android:layout_width="210dp"
+        android:layout_height="63dp"
         android:background="@color/colorPrimary"
         android:text="DIVISION"
         android:textSize="18sp"
@@ -72,14 +72,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.594"
+        app:layout_constraintVertical_bias="0.674"
         tools:layout_constraintLeft_creator="1"
         tools:layout_constraintTop_creator="1" />
 
     <Button
         android:id="@+id/combinationActivityButton"
-        android:layout_width="210"
-        android:layout_height="63"
+        android:layout_width="210dp"
+        android:layout_height="63dp"
         android:background="@color/colorPrimary"
         android:text="COMBINATION"
         android:textSize="18sp"
@@ -88,5 +88,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.763" />
+        app:layout_constraintVertical_bias="0.877" />
 </android.support.constraint.ConstraintLayout>
