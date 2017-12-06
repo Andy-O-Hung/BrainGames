@@ -11,8 +11,6 @@ import android.widget.Button;
  */
 public class MainActivity extends AppCompatActivity {
 
-    /** Initilize the splash screen time out. */
-    private static int splashTimeOut = 4000;
 
     /** Intialize the the memory games button. */
     private Button memoryButton;

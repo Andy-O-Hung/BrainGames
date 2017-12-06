@@ -12,7 +12,7 @@ import java.util.Random;
 /**
  * The activity of our math combination game.
  */
-public class MathCombinationActivity extends AppCompatActivity {
+public class  MathCombinationActivity extends AppCompatActivity {
     /** Initialize the check button. */
     private Button checkButton;
 
