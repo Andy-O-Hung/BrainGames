@@ -1,4 +1,4 @@
 # BrainGamesV2
 
 
-For this project, we learned android and built an android app that consists of a few brain exercising games/activities.
+A semeseter project where we explored Android development awhile also developing a basic app.
